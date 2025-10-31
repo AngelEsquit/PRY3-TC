@@ -115,7 +115,3 @@ El sistema está compuesto por múltiples Máquinas de Turing especializadas:
 
 Todas las operaciones respetan las restricciones de MT puras (solo lectura/escritura/movimiento/cambio de estado).
 
-## 👨‍💻 Autor
-
-Proyecto de Teoría de la Computación 2025
-
