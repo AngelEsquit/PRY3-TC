@@ -1,0 +1,46 @@
+{
+  "description": "Máquina de Turing para MÓDULO 26 usando marcas",
+  "purpose": "Entrada: ||||...(n marcas), Salida: n mod 26 marcas",
+  "example": "Cuenta 26 marcas y las borra, repite hasta que queden <26",
+  "note": "Usa 26 estados (q1-q26) para contar hasta 26, luego borra y repite",
+  
+  "states": [
+    "q0",
+    "q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10",
+    "q11", "q12", "q13", "q14", "q15", "q16", "q17", "q18", "q19", "q20",
+    "q21", "q22", "q23", "q24", "q25", "q26",
+    "q_erase",
+    "q_restart",
+    "q_cleanup",
+    "q_accept"
+  ],
+  
+  "input_alphabet": ["|"],
+  
+  "tape_alphabet": ["|", "_", "X", "#"],
+  
+  "initial_state": "q0",
+  
+  "accept_states": ["q_accept"],
+  
+  "blank_symbol": "_",
+  
+  "transitions": [
+    {
+      "comment": "Marcar inicio",
+      "current_state": "q0",
+      "read_symbol": "|",
+      "next_state": "q1",
+      "write_symbol": "#",
+      "move": "R"
+    },
+    {
+      "comment": "Entrada vacía",
+      "current_state": "q0",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "_",
+      "move": "N"
+    }
+  ]
+}

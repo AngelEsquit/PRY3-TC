@@ -1,0 +1,525 @@
+{
+  "description": "Máquina de Turing para convertir NÚMERO (marcas) a LETRA",
+  "purpose": "Entrada: n marcas, Salida: letra correspondiente (0=A, 1=B, ...)",
+  "example": "|||||||  (7 marcas) -> H",
+  "note": "Generado automáticamente",
+  "states": [
+    "q0",
+    "q_1",
+    "q_2",
+    "q_3",
+    "q_4",
+    "q_5",
+    "q_6",
+    "q_7",
+    "q_8",
+    "q_9",
+    "q_10",
+    "q_11",
+    "q_12",
+    "q_13",
+    "q_14",
+    "q_15",
+    "q_16",
+    "q_17",
+    "q_18",
+    "q_19",
+    "q_20",
+    "q_21",
+    "q_22",
+    "q_23",
+    "q_24",
+    "q_25",
+    "q_26",
+    "q_back",
+    "q_accept"
+  ],
+  "input_alphabet": [
+    "|"
+  ],
+  "tape_alphabet": [
+    "|",
+    "_",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z"
+  ],
+  "initial_state": "q0",
+  "accept_states": [
+    "q_accept"
+  ],
+  "blank_symbol": "_",
+  "transitions": [
+    {
+      "comment": "0 marcas = A",
+      "current_state": "q0",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "A",
+      "move": "N"
+    },
+    {
+      "comment": "Primera marca",
+      "current_state": "q0",
+      "read_symbol": "|",
+      "next_state": "q_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "Marca 1: leer siguiente",
+      "current_state": "q_1",
+      "read_symbol": "|",
+      "next_state": "q_2",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "1 marca(s) = B",
+      "current_state": "q_1",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "B",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 2: leer siguiente",
+      "current_state": "q_2",
+      "read_symbol": "|",
+      "next_state": "q_3",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "2 marca(s) = C",
+      "current_state": "q_2",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "C",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 3: leer siguiente",
+      "current_state": "q_3",
+      "read_symbol": "|",
+      "next_state": "q_4",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "3 marca(s) = D",
+      "current_state": "q_3",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "D",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 4: leer siguiente",
+      "current_state": "q_4",
+      "read_symbol": "|",
+      "next_state": "q_5",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "4 marca(s) = E",
+      "current_state": "q_4",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "E",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 5: leer siguiente",
+      "current_state": "q_5",
+      "read_symbol": "|",
+      "next_state": "q_6",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "5 marca(s) = F",
+      "current_state": "q_5",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "F",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 6: leer siguiente",
+      "current_state": "q_6",
+      "read_symbol": "|",
+      "next_state": "q_7",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "6 marca(s) = G",
+      "current_state": "q_6",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "G",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 7: leer siguiente",
+      "current_state": "q_7",
+      "read_symbol": "|",
+      "next_state": "q_8",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "7 marca(s) = H",
+      "current_state": "q_7",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "H",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 8: leer siguiente",
+      "current_state": "q_8",
+      "read_symbol": "|",
+      "next_state": "q_9",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "8 marca(s) = I",
+      "current_state": "q_8",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "I",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 9: leer siguiente",
+      "current_state": "q_9",
+      "read_symbol": "|",
+      "next_state": "q_10",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "9 marca(s) = J",
+      "current_state": "q_9",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "J",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 10: leer siguiente",
+      "current_state": "q_10",
+      "read_symbol": "|",
+      "next_state": "q_11",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "10 marca(s) = K",
+      "current_state": "q_10",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "K",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 11: leer siguiente",
+      "current_state": "q_11",
+      "read_symbol": "|",
+      "next_state": "q_12",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "11 marca(s) = L",
+      "current_state": "q_11",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "L",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 12: leer siguiente",
+      "current_state": "q_12",
+      "read_symbol": "|",
+      "next_state": "q_13",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "12 marca(s) = M",
+      "current_state": "q_12",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "M",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 13: leer siguiente",
+      "current_state": "q_13",
+      "read_symbol": "|",
+      "next_state": "q_14",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "13 marca(s) = N",
+      "current_state": "q_13",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "N",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 14: leer siguiente",
+      "current_state": "q_14",
+      "read_symbol": "|",
+      "next_state": "q_15",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "14 marca(s) = O",
+      "current_state": "q_14",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "O",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 15: leer siguiente",
+      "current_state": "q_15",
+      "read_symbol": "|",
+      "next_state": "q_16",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "15 marca(s) = P",
+      "current_state": "q_15",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "P",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 16: leer siguiente",
+      "current_state": "q_16",
+      "read_symbol": "|",
+      "next_state": "q_17",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "16 marca(s) = Q",
+      "current_state": "q_16",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "Q",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 17: leer siguiente",
+      "current_state": "q_17",
+      "read_symbol": "|",
+      "next_state": "q_18",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "17 marca(s) = R",
+      "current_state": "q_17",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "R",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 18: leer siguiente",
+      "current_state": "q_18",
+      "read_symbol": "|",
+      "next_state": "q_19",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "18 marca(s) = S",
+      "current_state": "q_18",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "S",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 19: leer siguiente",
+      "current_state": "q_19",
+      "read_symbol": "|",
+      "next_state": "q_20",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "19 marca(s) = T",
+      "current_state": "q_19",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "T",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 20: leer siguiente",
+      "current_state": "q_20",
+      "read_symbol": "|",
+      "next_state": "q_21",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "20 marca(s) = U",
+      "current_state": "q_20",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "U",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 21: leer siguiente",
+      "current_state": "q_21",
+      "read_symbol": "|",
+      "next_state": "q_22",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "21 marca(s) = V",
+      "current_state": "q_21",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "V",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 22: leer siguiente",
+      "current_state": "q_22",
+      "read_symbol": "|",
+      "next_state": "q_23",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "22 marca(s) = W",
+      "current_state": "q_22",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "W",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 23: leer siguiente",
+      "current_state": "q_23",
+      "read_symbol": "|",
+      "next_state": "q_24",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "23 marca(s) = X",
+      "current_state": "q_23",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "X",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 24: leer siguiente",
+      "current_state": "q_24",
+      "read_symbol": "|",
+      "next_state": "q_25",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "24 marca(s) = Y",
+      "current_state": "q_24",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "Y",
+      "move": "L"
+    },
+    {
+      "comment": "Marca 25: leer siguiente",
+      "current_state": "q_25",
+      "read_symbol": "|",
+      "next_state": "q_26",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "25 marca(s) = Z",
+      "current_state": "q_25",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "Z",
+      "move": "L"
+    },
+    {
+      "comment": "25 marcas = Z (continuar si hay más)",
+      "current_state": "q_26",
+      "read_symbol": "|",
+      "next_state": "q_26",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "25+ marcas = Z",
+      "current_state": "q_26",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "Z",
+      "move": "L"
+    },
+    {
+      "comment": "Retroceder sobre blancos",
+      "current_state": "q_back",
+      "read_symbol": "_",
+      "next_state": "q_back",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "comment": "Llegar al inicio y aceptar",
+      "current_state": "q_back",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "_",
+      "move": "R"
+    }
+  ]
+}

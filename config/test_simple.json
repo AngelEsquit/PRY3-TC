@@ -1,0 +1,40 @@
+{
+  "description": "Máquina de Turing simple para probar la clase base",
+  "purpose": "Prueba: Reemplaza todas las A por B y se mueve a la derecha",
+  
+  "states": ["q0", "q1", "q_accept"],
+  
+  "input_alphabet": ["A", "B"],
+  
+  "tape_alphabet": ["A", "B", "_"],
+  
+  "initial_state": "q0",
+  
+  "accept_states": ["q_accept"],
+  
+  "blank_symbol": "_",
+  
+  "transitions": [
+    {
+      "current_state": "q0",
+      "read_symbol": "A",
+      "next_state": "q0",
+      "write_symbol": "B",
+      "move": "R"
+    },
+    {
+      "current_state": "q0",
+      "read_symbol": "B",
+      "next_state": "q0",
+      "write_symbol": "B",
+      "move": "R"
+    },
+    {
+      "current_state": "q0",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "_",
+      "move": "N"
+    }
+  ]
+}

@@ -1,0 +1,3209 @@
+{
+  "description": "Máquina de Turing para convertir LETRA a NÚMERO (en marcas)",
+  "purpose": "Entrada: letra (A-Z), Salida: posición en marcas (A=0, B=1, ...)",
+  "example": "H -> ||||||| (7 marcas)",
+  "note": "Generado automáticamente",
+  "states": [
+    "q0",
+    "q_write",
+    "q_accept",
+    "q_write_B_1",
+    "q_write_C_1",
+    "q_write_C_2",
+    "q_write_D_1",
+    "q_write_D_2",
+    "q_write_D_3",
+    "q_write_E_1",
+    "q_write_E_2",
+    "q_write_E_3",
+    "q_write_E_4",
+    "q_write_F_1",
+    "q_write_F_2",
+    "q_write_F_3",
+    "q_write_F_4",
+    "q_write_F_5",
+    "q_write_G_1",
+    "q_write_G_2",
+    "q_write_G_3",
+    "q_write_G_4",
+    "q_write_G_5",
+    "q_write_G_6",
+    "q_write_H_1",
+    "q_write_H_2",
+    "q_write_H_3",
+    "q_write_H_4",
+    "q_write_H_5",
+    "q_write_H_6",
+    "q_write_H_7",
+    "q_write_I_1",
+    "q_write_I_2",
+    "q_write_I_3",
+    "q_write_I_4",
+    "q_write_I_5",
+    "q_write_I_6",
+    "q_write_I_7",
+    "q_write_I_8",
+    "q_write_J_1",
+    "q_write_J_2",
+    "q_write_J_3",
+    "q_write_J_4",
+    "q_write_J_5",
+    "q_write_J_6",
+    "q_write_J_7",
+    "q_write_J_8",
+    "q_write_J_9",
+    "q_write_K_1",
+    "q_write_K_2",
+    "q_write_K_3",
+    "q_write_K_4",
+    "q_write_K_5",
+    "q_write_K_6",
+    "q_write_K_7",
+    "q_write_K_8",
+    "q_write_K_9",
+    "q_write_K_10",
+    "q_write_L_1",
+    "q_write_L_2",
+    "q_write_L_3",
+    "q_write_L_4",
+    "q_write_L_5",
+    "q_write_L_6",
+    "q_write_L_7",
+    "q_write_L_8",
+    "q_write_L_9",
+    "q_write_L_10",
+    "q_write_L_11",
+    "q_write_M_1",
+    "q_write_M_2",
+    "q_write_M_3",
+    "q_write_M_4",
+    "q_write_M_5",
+    "q_write_M_6",
+    "q_write_M_7",
+    "q_write_M_8",
+    "q_write_M_9",
+    "q_write_M_10",
+    "q_write_M_11",
+    "q_write_M_12",
+    "q_write_N_1",
+    "q_write_N_2",
+    "q_write_N_3",
+    "q_write_N_4",
+    "q_write_N_5",
+    "q_write_N_6",
+    "q_write_N_7",
+    "q_write_N_8",
+    "q_write_N_9",
+    "q_write_N_10",
+    "q_write_N_11",
+    "q_write_N_12",
+    "q_write_N_13",
+    "q_write_O_1",
+    "q_write_O_2",
+    "q_write_O_3",
+    "q_write_O_4",
+    "q_write_O_5",
+    "q_write_O_6",
+    "q_write_O_7",
+    "q_write_O_8",
+    "q_write_O_9",
+    "q_write_O_10",
+    "q_write_O_11",
+    "q_write_O_12",
+    "q_write_O_13",
+    "q_write_O_14",
+    "q_write_P_1",
+    "q_write_P_2",
+    "q_write_P_3",
+    "q_write_P_4",
+    "q_write_P_5",
+    "q_write_P_6",
+    "q_write_P_7",
+    "q_write_P_8",
+    "q_write_P_9",
+    "q_write_P_10",
+    "q_write_P_11",
+    "q_write_P_12",
+    "q_write_P_13",
+    "q_write_P_14",
+    "q_write_P_15",
+    "q_write_Q_1",
+    "q_write_Q_2",
+    "q_write_Q_3",
+    "q_write_Q_4",
+    "q_write_Q_5",
+    "q_write_Q_6",
+    "q_write_Q_7",
+    "q_write_Q_8",
+    "q_write_Q_9",
+    "q_write_Q_10",
+    "q_write_Q_11",
+    "q_write_Q_12",
+    "q_write_Q_13",
+    "q_write_Q_14",
+    "q_write_Q_15",
+    "q_write_Q_16",
+    "q_write_R_1",
+    "q_write_R_2",
+    "q_write_R_3",
+    "q_write_R_4",
+    "q_write_R_5",
+    "q_write_R_6",
+    "q_write_R_7",
+    "q_write_R_8",
+    "q_write_R_9",
+    "q_write_R_10",
+    "q_write_R_11",
+    "q_write_R_12",
+    "q_write_R_13",
+    "q_write_R_14",
+    "q_write_R_15",
+    "q_write_R_16",
+    "q_write_R_17",
+    "q_write_S_1",
+    "q_write_S_2",
+    "q_write_S_3",
+    "q_write_S_4",
+    "q_write_S_5",
+    "q_write_S_6",
+    "q_write_S_7",
+    "q_write_S_8",
+    "q_write_S_9",
+    "q_write_S_10",
+    "q_write_S_11",
+    "q_write_S_12",
+    "q_write_S_13",
+    "q_write_S_14",
+    "q_write_S_15",
+    "q_write_S_16",
+    "q_write_S_17",
+    "q_write_S_18",
+    "q_write_T_1",
+    "q_write_T_2",
+    "q_write_T_3",
+    "q_write_T_4",
+    "q_write_T_5",
+    "q_write_T_6",
+    "q_write_T_7",
+    "q_write_T_8",
+    "q_write_T_9",
+    "q_write_T_10",
+    "q_write_T_11",
+    "q_write_T_12",
+    "q_write_T_13",
+    "q_write_T_14",
+    "q_write_T_15",
+    "q_write_T_16",
+    "q_write_T_17",
+    "q_write_T_18",
+    "q_write_T_19",
+    "q_write_U_1",
+    "q_write_U_2",
+    "q_write_U_3",
+    "q_write_U_4",
+    "q_write_U_5",
+    "q_write_U_6",
+    "q_write_U_7",
+    "q_write_U_8",
+    "q_write_U_9",
+    "q_write_U_10",
+    "q_write_U_11",
+    "q_write_U_12",
+    "q_write_U_13",
+    "q_write_U_14",
+    "q_write_U_15",
+    "q_write_U_16",
+    "q_write_U_17",
+    "q_write_U_18",
+    "q_write_U_19",
+    "q_write_U_20",
+    "q_write_V_1",
+    "q_write_V_2",
+    "q_write_V_3",
+    "q_write_V_4",
+    "q_write_V_5",
+    "q_write_V_6",
+    "q_write_V_7",
+    "q_write_V_8",
+    "q_write_V_9",
+    "q_write_V_10",
+    "q_write_V_11",
+    "q_write_V_12",
+    "q_write_V_13",
+    "q_write_V_14",
+    "q_write_V_15",
+    "q_write_V_16",
+    "q_write_V_17",
+    "q_write_V_18",
+    "q_write_V_19",
+    "q_write_V_20",
+    "q_write_V_21",
+    "q_write_W_1",
+    "q_write_W_2",
+    "q_write_W_3",
+    "q_write_W_4",
+    "q_write_W_5",
+    "q_write_W_6",
+    "q_write_W_7",
+    "q_write_W_8",
+    "q_write_W_9",
+    "q_write_W_10",
+    "q_write_W_11",
+    "q_write_W_12",
+    "q_write_W_13",
+    "q_write_W_14",
+    "q_write_W_15",
+    "q_write_W_16",
+    "q_write_W_17",
+    "q_write_W_18",
+    "q_write_W_19",
+    "q_write_W_20",
+    "q_write_W_21",
+    "q_write_W_22",
+    "q_write_X_1",
+    "q_write_X_2",
+    "q_write_X_3",
+    "q_write_X_4",
+    "q_write_X_5",
+    "q_write_X_6",
+    "q_write_X_7",
+    "q_write_X_8",
+    "q_write_X_9",
+    "q_write_X_10",
+    "q_write_X_11",
+    "q_write_X_12",
+    "q_write_X_13",
+    "q_write_X_14",
+    "q_write_X_15",
+    "q_write_X_16",
+    "q_write_X_17",
+    "q_write_X_18",
+    "q_write_X_19",
+    "q_write_X_20",
+    "q_write_X_21",
+    "q_write_X_22",
+    "q_write_X_23",
+    "q_write_Y_1",
+    "q_write_Y_2",
+    "q_write_Y_3",
+    "q_write_Y_4",
+    "q_write_Y_5",
+    "q_write_Y_6",
+    "q_write_Y_7",
+    "q_write_Y_8",
+    "q_write_Y_9",
+    "q_write_Y_10",
+    "q_write_Y_11",
+    "q_write_Y_12",
+    "q_write_Y_13",
+    "q_write_Y_14",
+    "q_write_Y_15",
+    "q_write_Y_16",
+    "q_write_Y_17",
+    "q_write_Y_18",
+    "q_write_Y_19",
+    "q_write_Y_20",
+    "q_write_Y_21",
+    "q_write_Y_22",
+    "q_write_Y_23",
+    "q_write_Y_24",
+    "q_write_Z_1",
+    "q_write_Z_2",
+    "q_write_Z_3",
+    "q_write_Z_4",
+    "q_write_Z_5",
+    "q_write_Z_6",
+    "q_write_Z_7",
+    "q_write_Z_8",
+    "q_write_Z_9",
+    "q_write_Z_10",
+    "q_write_Z_11",
+    "q_write_Z_12",
+    "q_write_Z_13",
+    "q_write_Z_14",
+    "q_write_Z_15",
+    "q_write_Z_16",
+    "q_write_Z_17",
+    "q_write_Z_18",
+    "q_write_Z_19",
+    "q_write_Z_20",
+    "q_write_Z_21",
+    "q_write_Z_22",
+    "q_write_Z_23",
+    "q_write_Z_24",
+    "q_write_Z_25"
+  ],
+  "input_alphabet": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z"
+  ],
+  "tape_alphabet": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+    "|",
+    "_"
+  ],
+  "initial_state": "q0",
+  "accept_states": [
+    "q_accept"
+  ],
+  "blank_symbol": "_",
+  "transitions": [
+    {
+      "comment": "A=0: borrar letra, no escribir marcas",
+      "current_state": "q0",
+      "read_symbol": "A",
+      "next_state": "q_accept",
+      "write_symbol": "_",
+      "move": "N"
+    },
+    {
+      "comment": "B=1: borrar letra y escribir 1 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "B",
+      "next_state": "q_write_B_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "B: escribir marca 1/1",
+      "current_state": "q_write_B_1",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "C=2: borrar letra y escribir 2 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "C",
+      "next_state": "q_write_C_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "C: escribir marca 1/2",
+      "current_state": "q_write_C_1",
+      "read_symbol": "_",
+      "next_state": "q_write_C_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "C: escribir marca 2/2",
+      "current_state": "q_write_C_2",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "D=3: borrar letra y escribir 3 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "D",
+      "next_state": "q_write_D_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "D: escribir marca 1/3",
+      "current_state": "q_write_D_1",
+      "read_symbol": "_",
+      "next_state": "q_write_D_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "D: escribir marca 2/3",
+      "current_state": "q_write_D_2",
+      "read_symbol": "_",
+      "next_state": "q_write_D_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "D: escribir marca 3/3",
+      "current_state": "q_write_D_3",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "E=4: borrar letra y escribir 4 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "E",
+      "next_state": "q_write_E_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "E: escribir marca 1/4",
+      "current_state": "q_write_E_1",
+      "read_symbol": "_",
+      "next_state": "q_write_E_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "E: escribir marca 2/4",
+      "current_state": "q_write_E_2",
+      "read_symbol": "_",
+      "next_state": "q_write_E_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "E: escribir marca 3/4",
+      "current_state": "q_write_E_3",
+      "read_symbol": "_",
+      "next_state": "q_write_E_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "E: escribir marca 4/4",
+      "current_state": "q_write_E_4",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "F=5: borrar letra y escribir 5 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "F",
+      "next_state": "q_write_F_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "F: escribir marca 1/5",
+      "current_state": "q_write_F_1",
+      "read_symbol": "_",
+      "next_state": "q_write_F_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "F: escribir marca 2/5",
+      "current_state": "q_write_F_2",
+      "read_symbol": "_",
+      "next_state": "q_write_F_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "F: escribir marca 3/5",
+      "current_state": "q_write_F_3",
+      "read_symbol": "_",
+      "next_state": "q_write_F_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "F: escribir marca 4/5",
+      "current_state": "q_write_F_4",
+      "read_symbol": "_",
+      "next_state": "q_write_F_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "F: escribir marca 5/5",
+      "current_state": "q_write_F_5",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "G=6: borrar letra y escribir 6 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "G",
+      "next_state": "q_write_G_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "G: escribir marca 1/6",
+      "current_state": "q_write_G_1",
+      "read_symbol": "_",
+      "next_state": "q_write_G_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "G: escribir marca 2/6",
+      "current_state": "q_write_G_2",
+      "read_symbol": "_",
+      "next_state": "q_write_G_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "G: escribir marca 3/6",
+      "current_state": "q_write_G_3",
+      "read_symbol": "_",
+      "next_state": "q_write_G_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "G: escribir marca 4/6",
+      "current_state": "q_write_G_4",
+      "read_symbol": "_",
+      "next_state": "q_write_G_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "G: escribir marca 5/6",
+      "current_state": "q_write_G_5",
+      "read_symbol": "_",
+      "next_state": "q_write_G_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "G: escribir marca 6/6",
+      "current_state": "q_write_G_6",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "H=7: borrar letra y escribir 7 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "H",
+      "next_state": "q_write_H_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "H: escribir marca 1/7",
+      "current_state": "q_write_H_1",
+      "read_symbol": "_",
+      "next_state": "q_write_H_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "H: escribir marca 2/7",
+      "current_state": "q_write_H_2",
+      "read_symbol": "_",
+      "next_state": "q_write_H_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "H: escribir marca 3/7",
+      "current_state": "q_write_H_3",
+      "read_symbol": "_",
+      "next_state": "q_write_H_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "H: escribir marca 4/7",
+      "current_state": "q_write_H_4",
+      "read_symbol": "_",
+      "next_state": "q_write_H_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "H: escribir marca 5/7",
+      "current_state": "q_write_H_5",
+      "read_symbol": "_",
+      "next_state": "q_write_H_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "H: escribir marca 6/7",
+      "current_state": "q_write_H_6",
+      "read_symbol": "_",
+      "next_state": "q_write_H_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "H: escribir marca 7/7",
+      "current_state": "q_write_H_7",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "I=8: borrar letra y escribir 8 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "I",
+      "next_state": "q_write_I_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "I: escribir marca 1/8",
+      "current_state": "q_write_I_1",
+      "read_symbol": "_",
+      "next_state": "q_write_I_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "I: escribir marca 2/8",
+      "current_state": "q_write_I_2",
+      "read_symbol": "_",
+      "next_state": "q_write_I_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "I: escribir marca 3/8",
+      "current_state": "q_write_I_3",
+      "read_symbol": "_",
+      "next_state": "q_write_I_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "I: escribir marca 4/8",
+      "current_state": "q_write_I_4",
+      "read_symbol": "_",
+      "next_state": "q_write_I_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "I: escribir marca 5/8",
+      "current_state": "q_write_I_5",
+      "read_symbol": "_",
+      "next_state": "q_write_I_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "I: escribir marca 6/8",
+      "current_state": "q_write_I_6",
+      "read_symbol": "_",
+      "next_state": "q_write_I_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "I: escribir marca 7/8",
+      "current_state": "q_write_I_7",
+      "read_symbol": "_",
+      "next_state": "q_write_I_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "I: escribir marca 8/8",
+      "current_state": "q_write_I_8",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "J=9: borrar letra y escribir 9 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "J",
+      "next_state": "q_write_J_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "J: escribir marca 1/9",
+      "current_state": "q_write_J_1",
+      "read_symbol": "_",
+      "next_state": "q_write_J_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "J: escribir marca 2/9",
+      "current_state": "q_write_J_2",
+      "read_symbol": "_",
+      "next_state": "q_write_J_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "J: escribir marca 3/9",
+      "current_state": "q_write_J_3",
+      "read_symbol": "_",
+      "next_state": "q_write_J_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "J: escribir marca 4/9",
+      "current_state": "q_write_J_4",
+      "read_symbol": "_",
+      "next_state": "q_write_J_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "J: escribir marca 5/9",
+      "current_state": "q_write_J_5",
+      "read_symbol": "_",
+      "next_state": "q_write_J_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "J: escribir marca 6/9",
+      "current_state": "q_write_J_6",
+      "read_symbol": "_",
+      "next_state": "q_write_J_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "J: escribir marca 7/9",
+      "current_state": "q_write_J_7",
+      "read_symbol": "_",
+      "next_state": "q_write_J_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "J: escribir marca 8/9",
+      "current_state": "q_write_J_8",
+      "read_symbol": "_",
+      "next_state": "q_write_J_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "J: escribir marca 9/9",
+      "current_state": "q_write_J_9",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "K=10: borrar letra y escribir 10 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "K",
+      "next_state": "q_write_K_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "K: escribir marca 1/10",
+      "current_state": "q_write_K_1",
+      "read_symbol": "_",
+      "next_state": "q_write_K_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "K: escribir marca 2/10",
+      "current_state": "q_write_K_2",
+      "read_symbol": "_",
+      "next_state": "q_write_K_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "K: escribir marca 3/10",
+      "current_state": "q_write_K_3",
+      "read_symbol": "_",
+      "next_state": "q_write_K_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "K: escribir marca 4/10",
+      "current_state": "q_write_K_4",
+      "read_symbol": "_",
+      "next_state": "q_write_K_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "K: escribir marca 5/10",
+      "current_state": "q_write_K_5",
+      "read_symbol": "_",
+      "next_state": "q_write_K_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "K: escribir marca 6/10",
+      "current_state": "q_write_K_6",
+      "read_symbol": "_",
+      "next_state": "q_write_K_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "K: escribir marca 7/10",
+      "current_state": "q_write_K_7",
+      "read_symbol": "_",
+      "next_state": "q_write_K_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "K: escribir marca 8/10",
+      "current_state": "q_write_K_8",
+      "read_symbol": "_",
+      "next_state": "q_write_K_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "K: escribir marca 9/10",
+      "current_state": "q_write_K_9",
+      "read_symbol": "_",
+      "next_state": "q_write_K_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "K: escribir marca 10/10",
+      "current_state": "q_write_K_10",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "L=11: borrar letra y escribir 11 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "L",
+      "next_state": "q_write_L_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "L: escribir marca 1/11",
+      "current_state": "q_write_L_1",
+      "read_symbol": "_",
+      "next_state": "q_write_L_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "L: escribir marca 2/11",
+      "current_state": "q_write_L_2",
+      "read_symbol": "_",
+      "next_state": "q_write_L_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "L: escribir marca 3/11",
+      "current_state": "q_write_L_3",
+      "read_symbol": "_",
+      "next_state": "q_write_L_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "L: escribir marca 4/11",
+      "current_state": "q_write_L_4",
+      "read_symbol": "_",
+      "next_state": "q_write_L_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "L: escribir marca 5/11",
+      "current_state": "q_write_L_5",
+      "read_symbol": "_",
+      "next_state": "q_write_L_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "L: escribir marca 6/11",
+      "current_state": "q_write_L_6",
+      "read_symbol": "_",
+      "next_state": "q_write_L_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "L: escribir marca 7/11",
+      "current_state": "q_write_L_7",
+      "read_symbol": "_",
+      "next_state": "q_write_L_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "L: escribir marca 8/11",
+      "current_state": "q_write_L_8",
+      "read_symbol": "_",
+      "next_state": "q_write_L_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "L: escribir marca 9/11",
+      "current_state": "q_write_L_9",
+      "read_symbol": "_",
+      "next_state": "q_write_L_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "L: escribir marca 10/11",
+      "current_state": "q_write_L_10",
+      "read_symbol": "_",
+      "next_state": "q_write_L_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "L: escribir marca 11/11",
+      "current_state": "q_write_L_11",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "M=12: borrar letra y escribir 12 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "M",
+      "next_state": "q_write_M_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "M: escribir marca 1/12",
+      "current_state": "q_write_M_1",
+      "read_symbol": "_",
+      "next_state": "q_write_M_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "M: escribir marca 2/12",
+      "current_state": "q_write_M_2",
+      "read_symbol": "_",
+      "next_state": "q_write_M_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "M: escribir marca 3/12",
+      "current_state": "q_write_M_3",
+      "read_symbol": "_",
+      "next_state": "q_write_M_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "M: escribir marca 4/12",
+      "current_state": "q_write_M_4",
+      "read_symbol": "_",
+      "next_state": "q_write_M_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "M: escribir marca 5/12",
+      "current_state": "q_write_M_5",
+      "read_symbol": "_",
+      "next_state": "q_write_M_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "M: escribir marca 6/12",
+      "current_state": "q_write_M_6",
+      "read_symbol": "_",
+      "next_state": "q_write_M_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "M: escribir marca 7/12",
+      "current_state": "q_write_M_7",
+      "read_symbol": "_",
+      "next_state": "q_write_M_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "M: escribir marca 8/12",
+      "current_state": "q_write_M_8",
+      "read_symbol": "_",
+      "next_state": "q_write_M_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "M: escribir marca 9/12",
+      "current_state": "q_write_M_9",
+      "read_symbol": "_",
+      "next_state": "q_write_M_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "M: escribir marca 10/12",
+      "current_state": "q_write_M_10",
+      "read_symbol": "_",
+      "next_state": "q_write_M_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "M: escribir marca 11/12",
+      "current_state": "q_write_M_11",
+      "read_symbol": "_",
+      "next_state": "q_write_M_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "M: escribir marca 12/12",
+      "current_state": "q_write_M_12",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "N=13: borrar letra y escribir 13 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "N",
+      "next_state": "q_write_N_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "N: escribir marca 1/13",
+      "current_state": "q_write_N_1",
+      "read_symbol": "_",
+      "next_state": "q_write_N_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "N: escribir marca 2/13",
+      "current_state": "q_write_N_2",
+      "read_symbol": "_",
+      "next_state": "q_write_N_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "N: escribir marca 3/13",
+      "current_state": "q_write_N_3",
+      "read_symbol": "_",
+      "next_state": "q_write_N_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "N: escribir marca 4/13",
+      "current_state": "q_write_N_4",
+      "read_symbol": "_",
+      "next_state": "q_write_N_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "N: escribir marca 5/13",
+      "current_state": "q_write_N_5",
+      "read_symbol": "_",
+      "next_state": "q_write_N_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "N: escribir marca 6/13",
+      "current_state": "q_write_N_6",
+      "read_symbol": "_",
+      "next_state": "q_write_N_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "N: escribir marca 7/13",
+      "current_state": "q_write_N_7",
+      "read_symbol": "_",
+      "next_state": "q_write_N_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "N: escribir marca 8/13",
+      "current_state": "q_write_N_8",
+      "read_symbol": "_",
+      "next_state": "q_write_N_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "N: escribir marca 9/13",
+      "current_state": "q_write_N_9",
+      "read_symbol": "_",
+      "next_state": "q_write_N_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "N: escribir marca 10/13",
+      "current_state": "q_write_N_10",
+      "read_symbol": "_",
+      "next_state": "q_write_N_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "N: escribir marca 11/13",
+      "current_state": "q_write_N_11",
+      "read_symbol": "_",
+      "next_state": "q_write_N_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "N: escribir marca 12/13",
+      "current_state": "q_write_N_12",
+      "read_symbol": "_",
+      "next_state": "q_write_N_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "N: escribir marca 13/13",
+      "current_state": "q_write_N_13",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "O=14: borrar letra y escribir 14 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "O",
+      "next_state": "q_write_O_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "O: escribir marca 1/14",
+      "current_state": "q_write_O_1",
+      "read_symbol": "_",
+      "next_state": "q_write_O_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "O: escribir marca 2/14",
+      "current_state": "q_write_O_2",
+      "read_symbol": "_",
+      "next_state": "q_write_O_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "O: escribir marca 3/14",
+      "current_state": "q_write_O_3",
+      "read_symbol": "_",
+      "next_state": "q_write_O_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "O: escribir marca 4/14",
+      "current_state": "q_write_O_4",
+      "read_symbol": "_",
+      "next_state": "q_write_O_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "O: escribir marca 5/14",
+      "current_state": "q_write_O_5",
+      "read_symbol": "_",
+      "next_state": "q_write_O_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "O: escribir marca 6/14",
+      "current_state": "q_write_O_6",
+      "read_symbol": "_",
+      "next_state": "q_write_O_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "O: escribir marca 7/14",
+      "current_state": "q_write_O_7",
+      "read_symbol": "_",
+      "next_state": "q_write_O_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "O: escribir marca 8/14",
+      "current_state": "q_write_O_8",
+      "read_symbol": "_",
+      "next_state": "q_write_O_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "O: escribir marca 9/14",
+      "current_state": "q_write_O_9",
+      "read_symbol": "_",
+      "next_state": "q_write_O_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "O: escribir marca 10/14",
+      "current_state": "q_write_O_10",
+      "read_symbol": "_",
+      "next_state": "q_write_O_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "O: escribir marca 11/14",
+      "current_state": "q_write_O_11",
+      "read_symbol": "_",
+      "next_state": "q_write_O_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "O: escribir marca 12/14",
+      "current_state": "q_write_O_12",
+      "read_symbol": "_",
+      "next_state": "q_write_O_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "O: escribir marca 13/14",
+      "current_state": "q_write_O_13",
+      "read_symbol": "_",
+      "next_state": "q_write_O_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "O: escribir marca 14/14",
+      "current_state": "q_write_O_14",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "P=15: borrar letra y escribir 15 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "P",
+      "next_state": "q_write_P_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "P: escribir marca 1/15",
+      "current_state": "q_write_P_1",
+      "read_symbol": "_",
+      "next_state": "q_write_P_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "P: escribir marca 2/15",
+      "current_state": "q_write_P_2",
+      "read_symbol": "_",
+      "next_state": "q_write_P_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "P: escribir marca 3/15",
+      "current_state": "q_write_P_3",
+      "read_symbol": "_",
+      "next_state": "q_write_P_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "P: escribir marca 4/15",
+      "current_state": "q_write_P_4",
+      "read_symbol": "_",
+      "next_state": "q_write_P_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "P: escribir marca 5/15",
+      "current_state": "q_write_P_5",
+      "read_symbol": "_",
+      "next_state": "q_write_P_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "P: escribir marca 6/15",
+      "current_state": "q_write_P_6",
+      "read_symbol": "_",
+      "next_state": "q_write_P_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "P: escribir marca 7/15",
+      "current_state": "q_write_P_7",
+      "read_symbol": "_",
+      "next_state": "q_write_P_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "P: escribir marca 8/15",
+      "current_state": "q_write_P_8",
+      "read_symbol": "_",
+      "next_state": "q_write_P_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "P: escribir marca 9/15",
+      "current_state": "q_write_P_9",
+      "read_symbol": "_",
+      "next_state": "q_write_P_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "P: escribir marca 10/15",
+      "current_state": "q_write_P_10",
+      "read_symbol": "_",
+      "next_state": "q_write_P_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "P: escribir marca 11/15",
+      "current_state": "q_write_P_11",
+      "read_symbol": "_",
+      "next_state": "q_write_P_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "P: escribir marca 12/15",
+      "current_state": "q_write_P_12",
+      "read_symbol": "_",
+      "next_state": "q_write_P_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "P: escribir marca 13/15",
+      "current_state": "q_write_P_13",
+      "read_symbol": "_",
+      "next_state": "q_write_P_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "P: escribir marca 14/15",
+      "current_state": "q_write_P_14",
+      "read_symbol": "_",
+      "next_state": "q_write_P_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "P: escribir marca 15/15",
+      "current_state": "q_write_P_15",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "Q=16: borrar letra y escribir 16 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "Q",
+      "next_state": "q_write_Q_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 1/16",
+      "current_state": "q_write_Q_1",
+      "read_symbol": "_",
+      "next_state": "q_write_Q_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 2/16",
+      "current_state": "q_write_Q_2",
+      "read_symbol": "_",
+      "next_state": "q_write_Q_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 3/16",
+      "current_state": "q_write_Q_3",
+      "read_symbol": "_",
+      "next_state": "q_write_Q_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 4/16",
+      "current_state": "q_write_Q_4",
+      "read_symbol": "_",
+      "next_state": "q_write_Q_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 5/16",
+      "current_state": "q_write_Q_5",
+      "read_symbol": "_",
+      "next_state": "q_write_Q_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 6/16",
+      "current_state": "q_write_Q_6",
+      "read_symbol": "_",
+      "next_state": "q_write_Q_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 7/16",
+      "current_state": "q_write_Q_7",
+      "read_symbol": "_",
+      "next_state": "q_write_Q_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 8/16",
+      "current_state": "q_write_Q_8",
+      "read_symbol": "_",
+      "next_state": "q_write_Q_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 9/16",
+      "current_state": "q_write_Q_9",
+      "read_symbol": "_",
+      "next_state": "q_write_Q_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 10/16",
+      "current_state": "q_write_Q_10",
+      "read_symbol": "_",
+      "next_state": "q_write_Q_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 11/16",
+      "current_state": "q_write_Q_11",
+      "read_symbol": "_",
+      "next_state": "q_write_Q_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 12/16",
+      "current_state": "q_write_Q_12",
+      "read_symbol": "_",
+      "next_state": "q_write_Q_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 13/16",
+      "current_state": "q_write_Q_13",
+      "read_symbol": "_",
+      "next_state": "q_write_Q_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 14/16",
+      "current_state": "q_write_Q_14",
+      "read_symbol": "_",
+      "next_state": "q_write_Q_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 15/16",
+      "current_state": "q_write_Q_15",
+      "read_symbol": "_",
+      "next_state": "q_write_Q_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Q: escribir marca 16/16",
+      "current_state": "q_write_Q_16",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "R=17: borrar letra y escribir 17 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "R",
+      "next_state": "q_write_R_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 1/17",
+      "current_state": "q_write_R_1",
+      "read_symbol": "_",
+      "next_state": "q_write_R_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 2/17",
+      "current_state": "q_write_R_2",
+      "read_symbol": "_",
+      "next_state": "q_write_R_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 3/17",
+      "current_state": "q_write_R_3",
+      "read_symbol": "_",
+      "next_state": "q_write_R_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 4/17",
+      "current_state": "q_write_R_4",
+      "read_symbol": "_",
+      "next_state": "q_write_R_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 5/17",
+      "current_state": "q_write_R_5",
+      "read_symbol": "_",
+      "next_state": "q_write_R_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 6/17",
+      "current_state": "q_write_R_6",
+      "read_symbol": "_",
+      "next_state": "q_write_R_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 7/17",
+      "current_state": "q_write_R_7",
+      "read_symbol": "_",
+      "next_state": "q_write_R_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 8/17",
+      "current_state": "q_write_R_8",
+      "read_symbol": "_",
+      "next_state": "q_write_R_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 9/17",
+      "current_state": "q_write_R_9",
+      "read_symbol": "_",
+      "next_state": "q_write_R_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 10/17",
+      "current_state": "q_write_R_10",
+      "read_symbol": "_",
+      "next_state": "q_write_R_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 11/17",
+      "current_state": "q_write_R_11",
+      "read_symbol": "_",
+      "next_state": "q_write_R_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 12/17",
+      "current_state": "q_write_R_12",
+      "read_symbol": "_",
+      "next_state": "q_write_R_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 13/17",
+      "current_state": "q_write_R_13",
+      "read_symbol": "_",
+      "next_state": "q_write_R_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 14/17",
+      "current_state": "q_write_R_14",
+      "read_symbol": "_",
+      "next_state": "q_write_R_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 15/17",
+      "current_state": "q_write_R_15",
+      "read_symbol": "_",
+      "next_state": "q_write_R_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 16/17",
+      "current_state": "q_write_R_16",
+      "read_symbol": "_",
+      "next_state": "q_write_R_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "R: escribir marca 17/17",
+      "current_state": "q_write_R_17",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "S=18: borrar letra y escribir 18 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "S",
+      "next_state": "q_write_S_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 1/18",
+      "current_state": "q_write_S_1",
+      "read_symbol": "_",
+      "next_state": "q_write_S_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 2/18",
+      "current_state": "q_write_S_2",
+      "read_symbol": "_",
+      "next_state": "q_write_S_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 3/18",
+      "current_state": "q_write_S_3",
+      "read_symbol": "_",
+      "next_state": "q_write_S_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 4/18",
+      "current_state": "q_write_S_4",
+      "read_symbol": "_",
+      "next_state": "q_write_S_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 5/18",
+      "current_state": "q_write_S_5",
+      "read_symbol": "_",
+      "next_state": "q_write_S_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 6/18",
+      "current_state": "q_write_S_6",
+      "read_symbol": "_",
+      "next_state": "q_write_S_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 7/18",
+      "current_state": "q_write_S_7",
+      "read_symbol": "_",
+      "next_state": "q_write_S_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 8/18",
+      "current_state": "q_write_S_8",
+      "read_symbol": "_",
+      "next_state": "q_write_S_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 9/18",
+      "current_state": "q_write_S_9",
+      "read_symbol": "_",
+      "next_state": "q_write_S_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 10/18",
+      "current_state": "q_write_S_10",
+      "read_symbol": "_",
+      "next_state": "q_write_S_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 11/18",
+      "current_state": "q_write_S_11",
+      "read_symbol": "_",
+      "next_state": "q_write_S_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 12/18",
+      "current_state": "q_write_S_12",
+      "read_symbol": "_",
+      "next_state": "q_write_S_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 13/18",
+      "current_state": "q_write_S_13",
+      "read_symbol": "_",
+      "next_state": "q_write_S_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 14/18",
+      "current_state": "q_write_S_14",
+      "read_symbol": "_",
+      "next_state": "q_write_S_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 15/18",
+      "current_state": "q_write_S_15",
+      "read_symbol": "_",
+      "next_state": "q_write_S_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 16/18",
+      "current_state": "q_write_S_16",
+      "read_symbol": "_",
+      "next_state": "q_write_S_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 17/18",
+      "current_state": "q_write_S_17",
+      "read_symbol": "_",
+      "next_state": "q_write_S_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "S: escribir marca 18/18",
+      "current_state": "q_write_S_18",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "T=19: borrar letra y escribir 19 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "T",
+      "next_state": "q_write_T_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 1/19",
+      "current_state": "q_write_T_1",
+      "read_symbol": "_",
+      "next_state": "q_write_T_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 2/19",
+      "current_state": "q_write_T_2",
+      "read_symbol": "_",
+      "next_state": "q_write_T_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 3/19",
+      "current_state": "q_write_T_3",
+      "read_symbol": "_",
+      "next_state": "q_write_T_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 4/19",
+      "current_state": "q_write_T_4",
+      "read_symbol": "_",
+      "next_state": "q_write_T_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 5/19",
+      "current_state": "q_write_T_5",
+      "read_symbol": "_",
+      "next_state": "q_write_T_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 6/19",
+      "current_state": "q_write_T_6",
+      "read_symbol": "_",
+      "next_state": "q_write_T_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 7/19",
+      "current_state": "q_write_T_7",
+      "read_symbol": "_",
+      "next_state": "q_write_T_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 8/19",
+      "current_state": "q_write_T_8",
+      "read_symbol": "_",
+      "next_state": "q_write_T_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 9/19",
+      "current_state": "q_write_T_9",
+      "read_symbol": "_",
+      "next_state": "q_write_T_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 10/19",
+      "current_state": "q_write_T_10",
+      "read_symbol": "_",
+      "next_state": "q_write_T_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 11/19",
+      "current_state": "q_write_T_11",
+      "read_symbol": "_",
+      "next_state": "q_write_T_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 12/19",
+      "current_state": "q_write_T_12",
+      "read_symbol": "_",
+      "next_state": "q_write_T_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 13/19",
+      "current_state": "q_write_T_13",
+      "read_symbol": "_",
+      "next_state": "q_write_T_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 14/19",
+      "current_state": "q_write_T_14",
+      "read_symbol": "_",
+      "next_state": "q_write_T_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 15/19",
+      "current_state": "q_write_T_15",
+      "read_symbol": "_",
+      "next_state": "q_write_T_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 16/19",
+      "current_state": "q_write_T_16",
+      "read_symbol": "_",
+      "next_state": "q_write_T_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 17/19",
+      "current_state": "q_write_T_17",
+      "read_symbol": "_",
+      "next_state": "q_write_T_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 18/19",
+      "current_state": "q_write_T_18",
+      "read_symbol": "_",
+      "next_state": "q_write_T_19",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "T: escribir marca 19/19",
+      "current_state": "q_write_T_19",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "U=20: borrar letra y escribir 20 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "U",
+      "next_state": "q_write_U_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 1/20",
+      "current_state": "q_write_U_1",
+      "read_symbol": "_",
+      "next_state": "q_write_U_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 2/20",
+      "current_state": "q_write_U_2",
+      "read_symbol": "_",
+      "next_state": "q_write_U_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 3/20",
+      "current_state": "q_write_U_3",
+      "read_symbol": "_",
+      "next_state": "q_write_U_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 4/20",
+      "current_state": "q_write_U_4",
+      "read_symbol": "_",
+      "next_state": "q_write_U_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 5/20",
+      "current_state": "q_write_U_5",
+      "read_symbol": "_",
+      "next_state": "q_write_U_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 6/20",
+      "current_state": "q_write_U_6",
+      "read_symbol": "_",
+      "next_state": "q_write_U_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 7/20",
+      "current_state": "q_write_U_7",
+      "read_symbol": "_",
+      "next_state": "q_write_U_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 8/20",
+      "current_state": "q_write_U_8",
+      "read_symbol": "_",
+      "next_state": "q_write_U_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 9/20",
+      "current_state": "q_write_U_9",
+      "read_symbol": "_",
+      "next_state": "q_write_U_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 10/20",
+      "current_state": "q_write_U_10",
+      "read_symbol": "_",
+      "next_state": "q_write_U_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 11/20",
+      "current_state": "q_write_U_11",
+      "read_symbol": "_",
+      "next_state": "q_write_U_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 12/20",
+      "current_state": "q_write_U_12",
+      "read_symbol": "_",
+      "next_state": "q_write_U_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 13/20",
+      "current_state": "q_write_U_13",
+      "read_symbol": "_",
+      "next_state": "q_write_U_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 14/20",
+      "current_state": "q_write_U_14",
+      "read_symbol": "_",
+      "next_state": "q_write_U_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 15/20",
+      "current_state": "q_write_U_15",
+      "read_symbol": "_",
+      "next_state": "q_write_U_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 16/20",
+      "current_state": "q_write_U_16",
+      "read_symbol": "_",
+      "next_state": "q_write_U_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 17/20",
+      "current_state": "q_write_U_17",
+      "read_symbol": "_",
+      "next_state": "q_write_U_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 18/20",
+      "current_state": "q_write_U_18",
+      "read_symbol": "_",
+      "next_state": "q_write_U_19",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 19/20",
+      "current_state": "q_write_U_19",
+      "read_symbol": "_",
+      "next_state": "q_write_U_20",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "U: escribir marca 20/20",
+      "current_state": "q_write_U_20",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "V=21: borrar letra y escribir 21 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "V",
+      "next_state": "q_write_V_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 1/21",
+      "current_state": "q_write_V_1",
+      "read_symbol": "_",
+      "next_state": "q_write_V_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 2/21",
+      "current_state": "q_write_V_2",
+      "read_symbol": "_",
+      "next_state": "q_write_V_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 3/21",
+      "current_state": "q_write_V_3",
+      "read_symbol": "_",
+      "next_state": "q_write_V_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 4/21",
+      "current_state": "q_write_V_4",
+      "read_symbol": "_",
+      "next_state": "q_write_V_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 5/21",
+      "current_state": "q_write_V_5",
+      "read_symbol": "_",
+      "next_state": "q_write_V_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 6/21",
+      "current_state": "q_write_V_6",
+      "read_symbol": "_",
+      "next_state": "q_write_V_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 7/21",
+      "current_state": "q_write_V_7",
+      "read_symbol": "_",
+      "next_state": "q_write_V_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 8/21",
+      "current_state": "q_write_V_8",
+      "read_symbol": "_",
+      "next_state": "q_write_V_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 9/21",
+      "current_state": "q_write_V_9",
+      "read_symbol": "_",
+      "next_state": "q_write_V_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 10/21",
+      "current_state": "q_write_V_10",
+      "read_symbol": "_",
+      "next_state": "q_write_V_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 11/21",
+      "current_state": "q_write_V_11",
+      "read_symbol": "_",
+      "next_state": "q_write_V_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 12/21",
+      "current_state": "q_write_V_12",
+      "read_symbol": "_",
+      "next_state": "q_write_V_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 13/21",
+      "current_state": "q_write_V_13",
+      "read_symbol": "_",
+      "next_state": "q_write_V_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 14/21",
+      "current_state": "q_write_V_14",
+      "read_symbol": "_",
+      "next_state": "q_write_V_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 15/21",
+      "current_state": "q_write_V_15",
+      "read_symbol": "_",
+      "next_state": "q_write_V_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 16/21",
+      "current_state": "q_write_V_16",
+      "read_symbol": "_",
+      "next_state": "q_write_V_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 17/21",
+      "current_state": "q_write_V_17",
+      "read_symbol": "_",
+      "next_state": "q_write_V_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 18/21",
+      "current_state": "q_write_V_18",
+      "read_symbol": "_",
+      "next_state": "q_write_V_19",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 19/21",
+      "current_state": "q_write_V_19",
+      "read_symbol": "_",
+      "next_state": "q_write_V_20",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 20/21",
+      "current_state": "q_write_V_20",
+      "read_symbol": "_",
+      "next_state": "q_write_V_21",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "V: escribir marca 21/21",
+      "current_state": "q_write_V_21",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "W=22: borrar letra y escribir 22 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "W",
+      "next_state": "q_write_W_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 1/22",
+      "current_state": "q_write_W_1",
+      "read_symbol": "_",
+      "next_state": "q_write_W_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 2/22",
+      "current_state": "q_write_W_2",
+      "read_symbol": "_",
+      "next_state": "q_write_W_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 3/22",
+      "current_state": "q_write_W_3",
+      "read_symbol": "_",
+      "next_state": "q_write_W_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 4/22",
+      "current_state": "q_write_W_4",
+      "read_symbol": "_",
+      "next_state": "q_write_W_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 5/22",
+      "current_state": "q_write_W_5",
+      "read_symbol": "_",
+      "next_state": "q_write_W_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 6/22",
+      "current_state": "q_write_W_6",
+      "read_symbol": "_",
+      "next_state": "q_write_W_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 7/22",
+      "current_state": "q_write_W_7",
+      "read_symbol": "_",
+      "next_state": "q_write_W_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 8/22",
+      "current_state": "q_write_W_8",
+      "read_symbol": "_",
+      "next_state": "q_write_W_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 9/22",
+      "current_state": "q_write_W_9",
+      "read_symbol": "_",
+      "next_state": "q_write_W_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 10/22",
+      "current_state": "q_write_W_10",
+      "read_symbol": "_",
+      "next_state": "q_write_W_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 11/22",
+      "current_state": "q_write_W_11",
+      "read_symbol": "_",
+      "next_state": "q_write_W_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 12/22",
+      "current_state": "q_write_W_12",
+      "read_symbol": "_",
+      "next_state": "q_write_W_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 13/22",
+      "current_state": "q_write_W_13",
+      "read_symbol": "_",
+      "next_state": "q_write_W_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 14/22",
+      "current_state": "q_write_W_14",
+      "read_symbol": "_",
+      "next_state": "q_write_W_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 15/22",
+      "current_state": "q_write_W_15",
+      "read_symbol": "_",
+      "next_state": "q_write_W_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 16/22",
+      "current_state": "q_write_W_16",
+      "read_symbol": "_",
+      "next_state": "q_write_W_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 17/22",
+      "current_state": "q_write_W_17",
+      "read_symbol": "_",
+      "next_state": "q_write_W_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 18/22",
+      "current_state": "q_write_W_18",
+      "read_symbol": "_",
+      "next_state": "q_write_W_19",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 19/22",
+      "current_state": "q_write_W_19",
+      "read_symbol": "_",
+      "next_state": "q_write_W_20",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 20/22",
+      "current_state": "q_write_W_20",
+      "read_symbol": "_",
+      "next_state": "q_write_W_21",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 21/22",
+      "current_state": "q_write_W_21",
+      "read_symbol": "_",
+      "next_state": "q_write_W_22",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "W: escribir marca 22/22",
+      "current_state": "q_write_W_22",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "X=23: borrar letra y escribir 23 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "X",
+      "next_state": "q_write_X_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 1/23",
+      "current_state": "q_write_X_1",
+      "read_symbol": "_",
+      "next_state": "q_write_X_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 2/23",
+      "current_state": "q_write_X_2",
+      "read_symbol": "_",
+      "next_state": "q_write_X_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 3/23",
+      "current_state": "q_write_X_3",
+      "read_symbol": "_",
+      "next_state": "q_write_X_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 4/23",
+      "current_state": "q_write_X_4",
+      "read_symbol": "_",
+      "next_state": "q_write_X_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 5/23",
+      "current_state": "q_write_X_5",
+      "read_symbol": "_",
+      "next_state": "q_write_X_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 6/23",
+      "current_state": "q_write_X_6",
+      "read_symbol": "_",
+      "next_state": "q_write_X_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 7/23",
+      "current_state": "q_write_X_7",
+      "read_symbol": "_",
+      "next_state": "q_write_X_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 8/23",
+      "current_state": "q_write_X_8",
+      "read_symbol": "_",
+      "next_state": "q_write_X_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 9/23",
+      "current_state": "q_write_X_9",
+      "read_symbol": "_",
+      "next_state": "q_write_X_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 10/23",
+      "current_state": "q_write_X_10",
+      "read_symbol": "_",
+      "next_state": "q_write_X_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 11/23",
+      "current_state": "q_write_X_11",
+      "read_symbol": "_",
+      "next_state": "q_write_X_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 12/23",
+      "current_state": "q_write_X_12",
+      "read_symbol": "_",
+      "next_state": "q_write_X_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 13/23",
+      "current_state": "q_write_X_13",
+      "read_symbol": "_",
+      "next_state": "q_write_X_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 14/23",
+      "current_state": "q_write_X_14",
+      "read_symbol": "_",
+      "next_state": "q_write_X_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 15/23",
+      "current_state": "q_write_X_15",
+      "read_symbol": "_",
+      "next_state": "q_write_X_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 16/23",
+      "current_state": "q_write_X_16",
+      "read_symbol": "_",
+      "next_state": "q_write_X_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 17/23",
+      "current_state": "q_write_X_17",
+      "read_symbol": "_",
+      "next_state": "q_write_X_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 18/23",
+      "current_state": "q_write_X_18",
+      "read_symbol": "_",
+      "next_state": "q_write_X_19",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 19/23",
+      "current_state": "q_write_X_19",
+      "read_symbol": "_",
+      "next_state": "q_write_X_20",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 20/23",
+      "current_state": "q_write_X_20",
+      "read_symbol": "_",
+      "next_state": "q_write_X_21",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 21/23",
+      "current_state": "q_write_X_21",
+      "read_symbol": "_",
+      "next_state": "q_write_X_22",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 22/23",
+      "current_state": "q_write_X_22",
+      "read_symbol": "_",
+      "next_state": "q_write_X_23",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "X: escribir marca 23/23",
+      "current_state": "q_write_X_23",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "Y=24: borrar letra y escribir 24 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "Y",
+      "next_state": "q_write_Y_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 1/24",
+      "current_state": "q_write_Y_1",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 2/24",
+      "current_state": "q_write_Y_2",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 3/24",
+      "current_state": "q_write_Y_3",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 4/24",
+      "current_state": "q_write_Y_4",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 5/24",
+      "current_state": "q_write_Y_5",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 6/24",
+      "current_state": "q_write_Y_6",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 7/24",
+      "current_state": "q_write_Y_7",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 8/24",
+      "current_state": "q_write_Y_8",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 9/24",
+      "current_state": "q_write_Y_9",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 10/24",
+      "current_state": "q_write_Y_10",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 11/24",
+      "current_state": "q_write_Y_11",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 12/24",
+      "current_state": "q_write_Y_12",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 13/24",
+      "current_state": "q_write_Y_13",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 14/24",
+      "current_state": "q_write_Y_14",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 15/24",
+      "current_state": "q_write_Y_15",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 16/24",
+      "current_state": "q_write_Y_16",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 17/24",
+      "current_state": "q_write_Y_17",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 18/24",
+      "current_state": "q_write_Y_18",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_19",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 19/24",
+      "current_state": "q_write_Y_19",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_20",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 20/24",
+      "current_state": "q_write_Y_20",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_21",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 21/24",
+      "current_state": "q_write_Y_21",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_22",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 22/24",
+      "current_state": "q_write_Y_22",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_23",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 23/24",
+      "current_state": "q_write_Y_23",
+      "read_symbol": "_",
+      "next_state": "q_write_Y_24",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Y: escribir marca 24/24",
+      "current_state": "q_write_Y_24",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "comment": "Z=25: borrar letra y escribir 25 marca(s)",
+      "current_state": "q0",
+      "read_symbol": "Z",
+      "next_state": "q_write_Z_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 1/25",
+      "current_state": "q_write_Z_1",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 2/25",
+      "current_state": "q_write_Z_2",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 3/25",
+      "current_state": "q_write_Z_3",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 4/25",
+      "current_state": "q_write_Z_4",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 5/25",
+      "current_state": "q_write_Z_5",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 6/25",
+      "current_state": "q_write_Z_6",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 7/25",
+      "current_state": "q_write_Z_7",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 8/25",
+      "current_state": "q_write_Z_8",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 9/25",
+      "current_state": "q_write_Z_9",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 10/25",
+      "current_state": "q_write_Z_10",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 11/25",
+      "current_state": "q_write_Z_11",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 12/25",
+      "current_state": "q_write_Z_12",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 13/25",
+      "current_state": "q_write_Z_13",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 14/25",
+      "current_state": "q_write_Z_14",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 15/25",
+      "current_state": "q_write_Z_15",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 16/25",
+      "current_state": "q_write_Z_16",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 17/25",
+      "current_state": "q_write_Z_17",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 18/25",
+      "current_state": "q_write_Z_18",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_19",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 19/25",
+      "current_state": "q_write_Z_19",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_20",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 20/25",
+      "current_state": "q_write_Z_20",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_21",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 21/25",
+      "current_state": "q_write_Z_21",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_22",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 22/25",
+      "current_state": "q_write_Z_22",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_23",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 23/25",
+      "current_state": "q_write_Z_23",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_24",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 24/25",
+      "current_state": "q_write_Z_24",
+      "read_symbol": "_",
+      "next_state": "q_write_Z_25",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "comment": "Z: escribir marca 25/25",
+      "current_state": "q_write_Z_25",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    }
+  ]
+}
