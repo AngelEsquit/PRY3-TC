@@ -25,9 +25,7 @@ def test_simple_addition():
     tm = TuringMachine()
     config_path = os.path.join(os.path.dirname(__file__), '..', 'config', 'add_simple.json')
     
-    if not tm.load_config(config_path):
-        print("✗ No se pudo cargar la configuración")
-        return False
+    assert tm.load_config(config_path), "No se pudo cargar la configuración"
     
     tm.enable_debug_mode()
     
@@ -42,12 +40,7 @@ def test_simple_addition():
     print(f"Número de marcas: {mark_count}")
     print(f"Esperado: 5 marcas")
     
-    if mark_count == 5:
-        print("✓ PRUEBA EXITOSA")
-        return True
-    else:
-        print("✗ PRUEBA FALLIDA")
-        return False
+    assert mark_count == 5, f"Resultado incorrecto: {mark_count} marcas (esperado 5)"
 
 
 def test_addition_with_zero():
@@ -60,8 +53,7 @@ def test_addition_with_zero():
     tm = TuringMachine()
     config_path = os.path.join(os.path.dirname(__file__), '..', 'config', 'add_simple.json')
     
-    if not tm.load_config(config_path):
-        return False
+    assert tm.load_config(config_path), "No se pudo cargar la configuración"
     
     tm.disable_debug_mode()  # Sin debug para ver resultado directo
     
@@ -74,12 +66,7 @@ def test_addition_with_zero():
     print(f"Número de marcas: {mark_count}")
     print(f"Esperado: 3 marcas")
     
-    if mark_count == 3:
-        print("✓ PRUEBA EXITOSA")
-        return True
-    else:
-        print("✗ PRUEBA FALLIDA")
-        return False
+    assert mark_count == 3, f"Resultado incorrecto: {mark_count} marcas (esperado 3)"
 
 
 def test_simple_subtraction():
@@ -92,9 +79,7 @@ def test_simple_subtraction():
     tm = TuringMachine()
     config_path = os.path.join(os.path.dirname(__file__), '..', 'config', 'subtract_simple.json')
     
-    if not tm.load_config(config_path):
-        print("✗ No se pudo cargar la configuración")
-        return False
+    assert tm.load_config(config_path), "No se pudo cargar la configuración"
     
     tm.enable_debug_mode()
     
@@ -107,12 +92,7 @@ def test_simple_subtraction():
     print(f"Número de marcas: {mark_count}")
     print(f"Esperado: 3 marcas")
     
-    if mark_count == 3:
-        print("✓ PRUEBA EXITOSA")
-        return True
-    else:
-        print("✗ PRUEBA FALLIDA")
-        return False
+    assert mark_count == 3, f"Resultado incorrecto: {mark_count} marcas (esperado 3)"
 
 
 def test_subtraction_to_zero():
@@ -125,8 +105,7 @@ def test_subtraction_to_zero():
     tm = TuringMachine()
     config_path = os.path.join(os.path.dirname(__file__), '..', 'config', 'subtract_simple.json')
     
-    if not tm.load_config(config_path):
-        return False
+    assert tm.load_config(config_path), "No se pudo cargar la configuración"
     
     tm.disable_debug_mode()
     
@@ -139,12 +118,7 @@ def test_subtraction_to_zero():
     print(f"Número de marcas: {mark_count}")
     print(f"Esperado: 0 marcas")
     
-    if mark_count == 0:
-        print("✓ PRUEBA EXITOSA")
-        return True
-    else:
-        print("✗ PRUEBA FALLIDA")
-        return False
+    assert mark_count == 0, f"Resultado incorrecto: {mark_count} marcas (esperado 0)"
 
 
 if __name__ == "__main__":
@@ -158,31 +132,34 @@ if __name__ == "__main__":
         test_simple_subtraction,
         test_subtraction_to_zero
     ]
-    
+
     results = []
     for test in tests:
         try:
-            result = test()
-            results.append(result)
+            test()
+            results.append(True)
+        except AssertionError as e:
+            print(f"✗ Falló la prueba: {e}")
+            results.append(False)
         except Exception as e:
             print(f"✗ Error en prueba: {e}")
             import traceback
             traceback.print_exc()
             results.append(False)
-    
+
     # Resumen
     print("\n" + "=" * 60)
     print("RESUMEN")
     print("=" * 60)
-    passed = sum(results)
+    passed = sum(1 for r in results if r)
     total = len(results)
     print(f"Pruebas exitosas: {passed}/{total}")
-    
+
     if passed == total:
         print("\n🎉 ¡TODAS LAS PRUEBAS PASARON!")
     else:
         print(f"\n⚠️  {total - passed} prueba(s) fallaron")
         print("\nNota: Las operaciones aritméticas son complejas.")
         print("Es normal que tomen varios intentos para funcionar correctamente.")
-    
+
     print("=" * 60)

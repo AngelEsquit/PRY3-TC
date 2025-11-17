@@ -6,7 +6,6 @@ Esta clase integra múltiples MTs para realizar el cifrado completo
 import os
 from turing_machine import TuringMachine
 from arithmetic_utils import (
-    letter_to_number, number_to_letter, 
     number_to_marks, marks_to_number
 )
 
@@ -37,6 +36,7 @@ class CaesarCipherTM:
         self.tm_letter_to_num = TuringMachine()
         self.tm_add = TuringMachine()
         self.tm_num_to_letter = TuringMachine()
+        self.tm_mod26 = TuringMachine()
         
         # Rutas a las configuraciones
         config_dir = os.path.join(os.path.dirname(__file__), '..', 'config')
@@ -44,6 +44,7 @@ class CaesarCipherTM:
         letter_to_num_path = os.path.join(config_dir, 'letter_to_number.json')
         add_path = os.path.join(config_dir, 'add_simple.json')
         num_to_letter_path = os.path.join(config_dir, 'number_to_letter.json')
+        mod26_path = os.path.join(config_dir, 'mod26_full.json')
         
         # Cargar configuraciones
         if not self.tm_letter_to_num.load_config(letter_to_num_path):
@@ -54,6 +55,8 @@ class CaesarCipherTM:
         
         if not self.tm_num_to_letter.load_config(num_to_letter_path):
             raise Exception("No se pudo cargar number_to_letter.json")
+        if not self.tm_mod26.load_config(mod26_path):
+            raise Exception("No se pudo cargar mod26_full.json")
         
         if self.debug:
             print("✓ MTs componentes cargadas exitosamente")
@@ -105,15 +108,17 @@ class CaesarCipherTM:
         if self.debug:
             print(f"  {add_input} -> {sum_marks} ({sum_num})")
         
-        # Paso 3: Módulo 26 (usando función auxiliar)
+        # Paso 3: Módulo 26 (usando MT de módulo)
         if self.debug:
-            print(f"\n[Paso 3] Módulo 26: {sum_num} mod 26")
-        
-        mod_num = sum_num % 26
-        mod_marks = number_to_marks(mod_num)
-        
+            print(f"\n[Paso 3] Módulo 26 (MT): {sum_marks}")
+        # Ejecutar la MT de módulo directamente sobre las marcas de la suma
+        # Si no hay marcas (caso 0), pasamos '_'
+        mod_result = self.tm_mod26.run(sum_marks if sum_marks else '_', max_steps=5000)
+        # El resultado esperado son las marcas restantes (<26)
+        mod_marks = ''.join(ch for ch in mod_result if ch == '|')
+        mod_num = marks_to_number(mod_marks)
         if self.debug:
-            print(f"  {sum_num} mod 26 = {mod_num} ({mod_marks})")
+            print(f"  Resultado módulo (marcas): {mod_marks or '∅'} -> {mod_num}")
         
         # Paso 4: Número -> Letra (usando MT)
         if self.debug:
@@ -187,13 +192,22 @@ class CaesarCipherTM:
         if self.debug:
             print(f"  {letter} -> {letter_num}")
         
-        # Paso 2: Número - Shift (restar el shift)
-        # Para descifrar restamos el shift
-        decrypted_num = (letter_num - self.shift) % 26
-        decrypted_marks = number_to_marks(decrypted_num)
-        
+        # Paso 2: Representar número y shift en marcas y realizar resta mediante suma inversa
+        # Para descifrar: (letter_num - shift) mod 26 = (letter_num + (26 - shift)) mod 26
+        inverse_shift = (26 - self.shift) % 26
         if self.debug:
-            print(f"  {letter_num} - {self.shift} mod 26 = {decrypted_num}")
+            print(f"  Usando shift inverso: {inverse_shift}")
+        shift_marks = number_to_marks(inverse_shift)
+        add_input = letter_num_marks + '+' + shift_marks
+        add_result = self.tm_add.run(add_input, max_steps=2000)
+        sum_marks = add_result.replace('_', '').replace('+', '')
+
+        # Paso 3: Módulo 26 con MT
+        mod_result = self.tm_mod26.run(sum_marks if sum_marks else '_', max_steps=5000)
+        decrypted_marks = ''.join(ch for ch in mod_result if ch == '|')
+        decrypted_num = marks_to_number(decrypted_marks)
+        if self.debug:
+            print(f"  ( {letter_num} + {inverse_shift} ) mod 26 = {decrypted_num}")
         
         # Paso 3: Número -> Letra
         result = self.tm_num_to_letter.run(decrypted_marks if decrypted_marks else '_', max_steps=1000)

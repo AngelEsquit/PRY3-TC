@@ -26,16 +26,9 @@ def test_single_letters():
         ('Z', 'C'),
     ]
     
-    results = []
     for original, expected in test_cases:
         encrypted = cipher.encrypt(original)
-        success = encrypted == expected
-        results.append(success)
-        
-        status = "✓" if success else "✗"
-        print(f"{status} {original} -> {encrypted} (esperado: {expected})")
-    
-    return all(results)
+        assert encrypted == expected, f"{original} -> {encrypted} (esperado: {expected})"
 
 
 def test_words():
@@ -54,16 +47,9 @@ def test_words():
         ('WORLD', 'ZRUOG'),
     ]
     
-    results = []
     for original, expected in test_cases:
         encrypted = cipher.encrypt(original)
-        success = encrypted == expected
-        results.append(success)
-        
-        status = "✓" if success else "✗"
-        print(f"{status} {original} -> {encrypted} (esperado: {expected})")
-    
-    return all(results)
+        assert encrypted == expected, f"{original} -> {encrypted} (esperado: {expected})"
 
 
 def test_phrases():
@@ -80,18 +66,9 @@ def test_phrases():
         ('THE QUICK BROWN FOX', 'WKH TXLFN EURZQ IRA'),
     ]
     
-    results = []
     for original, expected in test_cases:
         encrypted = cipher.encrypt(original)
-        success = encrypted == expected
-        results.append(success)
-        
-        status = "✓" if success else "✗"
-        print(f"{status} '{original}'")
-        print(f"   -> '{encrypted}'")
-        print(f"   (esperado: '{expected}')")
-    
-    return all(results)
+        assert encrypted == expected, f"{original} -> {encrypted} (esperado: {expected})"
 
 
 def test_roundtrip():
@@ -111,20 +88,10 @@ def test_roundtrip():
         'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
     ]
     
-    results = []
     for original in test_cases:
         encrypted = cipher.encrypt(original)
         decrypted = cipher.decrypt(encrypted)
-        success = original == decrypted
-        results.append(success)
-        
-        status = "✓" if success else "✗"
-        print(f"{status} '{original[:30]}{'...' if len(original) > 30 else ''}'")
-        if not success:
-            print(f"   Cifrado:    '{encrypted}'")
-            print(f"   Descifrado: '{decrypted}'")
-    
-    return all(results)
+        assert original == decrypted, f"Roundtrip failed for: {original} -> {encrypted} -> {decrypted}"
 
 
 def test_different_shifts():
@@ -142,17 +109,10 @@ def test_different_shifts():
         25: 'GDKKN',
     }
     
-    results = []
     for shift, expected in expected_results.items():
         cipher = CaesarCipherTM(shift=shift, debug=False)
         encrypted = cipher.encrypt(test_text)
-        success = encrypted == expected
-        results.append(success)
-        
-        status = "✓" if success else "✗"
-        print(f"{status} Shift {shift:2d}: {test_text} -> {encrypted} (esperado: {expected})")
-    
-    return all(results)
+        assert encrypted == expected, f"Shift {shift}: {test_text} -> {encrypted} (esperado: {expected})"
 
 
 def test_mixed_case():
@@ -169,16 +129,9 @@ def test_mixed_case():
         ('PyThOn', 'SbWkRq'),
     ]
     
-    results = []
     for original, expected in test_cases:
         encrypted = cipher.encrypt(original)
-        success = encrypted == expected
-        results.append(success)
-        
-        status = "✓" if success else "✗"
-        print(f"{status} {original} -> {encrypted} (esperado: {expected})")
-    
-    return all(results)
+        assert encrypted == expected, f"{original} -> {encrypted} (esperado: {expected})"
 
 
 def test_edge_cases():
@@ -187,37 +140,20 @@ def test_edge_cases():
     print("TEST 7: Casos Extremos")
     print("="*70)
     
-    results = []
-    
     # Caso 1: Texto vacío
     cipher = CaesarCipherTM(shift=3, debug=False)
-    result = cipher.encrypt('')
-    success = result == ''
-    results.append(success)
-    print(f"{'✓' if success else '✗'} Texto vacío")
-    
+    assert cipher.encrypt('') == '', "Texto vacío: salida inesperada"
     # Caso 2: Solo espacios
-    result = cipher.encrypt('   ')
-    success = result == '   '
-    results.append(success)
-    print(f"{'✓' if success else '✗'} Solo espacios")
-    
+    assert cipher.encrypt('   ') == '   ', "Solo espacios: salida inesperada"
     # Caso 3: Una sola letra
     result = cipher.encrypt('A')
     decrypted = cipher.decrypt(result)
-    success = decrypted == 'A'
-    results.append(success)
-    print(f"{'✓' if success else '✗'} Una sola letra")
-    
+    assert decrypted == 'A', "Una sola letra: roundtrip incorrecto"
     # Caso 4: Texto largo
     long_text = 'A' * 50
     encrypted = cipher.encrypt(long_text)
     decrypted = cipher.decrypt(encrypted)
-    success = decrypted == long_text
-    results.append(success)
-    print(f"{'✓' if success else '✗'} Texto largo (50 caracteres)")
-    
-    return all(results)
+    assert decrypted == long_text, "Texto largo: roundtrip incorrecto"
 
 
 def run_all_tests():

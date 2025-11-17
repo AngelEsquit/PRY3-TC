@@ -20,9 +20,7 @@ def test_letter_to_number():
     tm = TuringMachine()
     config_path = os.path.join(os.path.dirname(__file__), '..', 'config', 'letter_to_number.json')
     
-    if not tm.load_config(config_path):
-        print("✗ No se pudo cargar la configuración")
-        return False
+    assert tm.load_config(config_path), "No se pudo cargar la configuración"
     
     test_cases = [
         ('A', 0, "A = posición 0"),
@@ -43,14 +41,7 @@ def test_letter_to_number():
         print(f"Resultado: {result}")
         print(f"Marcas: {mark_count}, Esperado: {expected}")
         
-        if mark_count == expected:
-            print("✓ CORRECTO")
-            results.append(True)
-        else:
-            print("✗ INCORRECTO")
-            results.append(False)
-    
-    return all(results)
+        assert mark_count == expected, f"{letter} -> {mark_count} marcas (esperado {expected})"
 
 
 def test_number_to_letter():
@@ -62,9 +53,7 @@ def test_number_to_letter():
     tm = TuringMachine()
     config_path = os.path.join(os.path.dirname(__file__), '..', 'config', 'number_to_letter.json')
     
-    if not tm.load_config(config_path):
-        print("✗ No se pudo cargar la configuración")
-        return False
+    assert tm.load_config(config_path), "No se pudo cargar la configuración"
     
     test_cases = [
         ('', 'A', "0 marcas = A"),
@@ -90,14 +79,7 @@ def test_number_to_letter():
         print(f"Resultado: {result}")
         print(f"Letra encontrada: {letter_found}, Esperado: {expected}")
         
-        if letter_found == expected:
-            print("✓ CORRECTO")
-            results.append(True)
-        else:
-            print("✗ INCORRECTO")
-            results.append(False)
-    
-    return all(results)
+        assert letter_found == expected, f"{marks} -> {letter_found} (esperado {expected})"
 
 
 if __name__ == "__main__":
@@ -105,21 +87,31 @@ if __name__ == "__main__":
     print("║" + " " * 12 + "PRUEBAS DE CONVERSIÓN" + " " * 25 + "║")
     print("╚" + "=" * 58 + "╝")
     
+    # Ejecutar y capturar fallos
+    tests = [test_letter_to_number, test_number_to_letter]
     results = []
-    results.append(test_letter_to_number())
-    results.append(test_number_to_letter())
-    
+    for test in tests:
+        try:
+            test()
+            results.append(True)
+        except AssertionError as e:
+            print(f"✗ Falló la prueba: {e}")
+            results.append(False)
+        except Exception as e:
+            print(f"✗ Error en prueba: {e}")
+            results.append(False)
+
     # Resumen
     print("\n" + "=" * 60)
     print("RESUMEN")
     print("=" * 60)
-    passed = sum(results)
+    passed = sum(1 for r in results if r)
     total = len(results)
     print(f"Grupos de pruebas exitosos: {passed}/{total}")
-    
+
     if passed == total:
         print("\n🎉 ¡TODAS LAS CONVERSIONES FUNCIONAN!")
     else:
         print(f"\n⚠️  {total - passed} grupo(s) fallaron")
-    
+
     print("=" * 60)

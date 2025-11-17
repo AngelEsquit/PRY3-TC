@@ -26,16 +26,10 @@ def test_basic_functionality():
     
     # Cargar configuración
     config_path = os.path.join(os.path.dirname(__file__), '..', 'config', 'test_simple.json')
-    if tm.load_config(config_path):
-        print("✓ Configuración cargada correctamente")
-    else:
-        print("✗ Error al cargar configuración")
-        return False
+    assert tm.load_config(config_path), "No se pudo cargar la configuración"
     
     # Mostrar configuración
     tm.display_configuration()
-    
-    return True
 
 
 def test_simple_execution():
@@ -59,12 +53,7 @@ def test_simple_execution():
     print(f"Salida:   '{result}'")
     print(f"Esperado: 'BBB'")
     
-    if result == "BBB":
-        print("✓ PRUEBA EXITOSA")
-        return True
-    else:
-        print("✗ PRUEBA FALLIDA")
-        return False
+    assert result == "BBB", f"Salida inesperada: {result} (esperado 'BBB')"
 
 
 def test_mixed_input():
@@ -88,12 +77,7 @@ def test_mixed_input():
     print(f"Salida:   '{result}'")
     print(f"Esperado: 'BBBBB'")
     
-    if result == "BBBBB":
-        print("✓ PRUEBA EXITOSA")
-        return True
-    else:
-        print("✗ PRUEBA FALLIDA")
-        return False
+    assert result == "BBBBB", f"Salida inesperada: {result} (esperado 'BBBBB')"
 
 
 def test_manual_configuration():
@@ -138,12 +122,7 @@ def test_manual_configuration():
     print(f"Salida:   '{result}'")
     print(f"Esperado: 'YYY'")
     
-    if result == "YYY":
-        print("✓ PRUEBA EXITOSA")
-        return True
-    else:
-        print("✗ PRUEBA FALLIDA")
-        return False
+    assert result == "YYY", f"Salida inesperada: {result} (esperado 'YYY')"
 
 
 def run_all_tests():
@@ -162,28 +141,30 @@ def run_all_tests():
     results = []
     for test in tests:
         try:
-            result = test()
-            results.append(result)
+            test()
+            results.append(True)
+        except AssertionError as e:
+            print(f"✗ Falló la prueba: {e}")
+            results.append(False)
         except Exception as e:
             print(f"✗ Error en prueba: {e}")
             results.append(False)
-    
+
     # Resumen
     print("\n" + "=" * 60)
     print("RESUMEN DE PRUEBAS")
     print("=" * 60)
-    passed = sum(results)
+    passed = sum(1 for r in results if r)
     total = len(results)
     print(f"Pruebas exitosas: {passed}/{total}")
-    
+
     if passed == total:
         print("\n🎉 ¡TODAS LAS PRUEBAS PASARON! ✓")
         print("La clase base TuringMachine está funcionando correctamente.")
     else:
         print(f"\n⚠️  {total - passed} prueba(s) fallaron")
-    
+
     print("=" * 60)
-    
     return passed == total
 
 
