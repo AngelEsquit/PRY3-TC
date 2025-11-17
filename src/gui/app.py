@@ -27,9 +27,13 @@ from turing_machine import TuringMachine  # type: ignore
 try:
     from caesar_encrypt_tm import CaesarEncryptTM
     from caesar_decrypt_tm import CaesarDecryptTM
+    from caesar_pipeline import build_encrypt_pipeline, build_decrypt_pipeline, PipelineStep
 except ImportError:
     CaesarEncryptTM = None  # type: ignore
     CaesarDecryptTM = None  # type: ignore
+    build_encrypt_pipeline = None  # type: ignore
+    build_decrypt_pipeline = None  # type: ignore
+    PipelineStep = None  # type: ignore
 
 
 class TMVisualizer(tk.Tk):
@@ -50,6 +54,17 @@ class TMVisualizer(tk.Tk):
         self.cfg_blank: str = '_'
         self.cfg_example: str | None = None
         self._example_suggestion: str | None = None
+        # Pipeline animación César
+        self.pipeline_steps: list[PipelineStep] = []
+        self.pipeline_index: int = 0
+        self.pipeline_playing: bool = False
+        self.pipeline_mode: bool = False
+        self.pipeline_filtered_steps: list[PipelineStep] = []
+        self.pipeline_stage_counts: dict[str, int] = {}
+        self.pipeline_use_filtered: bool = False
+        # Condensación
+        self.var_condense_boundaries = tk.BooleanVar(value=True)
+        self.var_sample_n = tk.IntVar(value=10)
 
         self._make_style()
         self._build()
@@ -110,6 +125,62 @@ class TMVisualizer(tk.Tk):
         self.lbl_cesar_status = ttk.Label(caesar, text="Listo", foreground="gray")
         self.lbl_cesar_status.pack(side=tk.LEFT, padx=12)
 
+        # Panel de Animación detallada
+        anim = ttk.LabelFrame(root, text="Animación Paso a Paso César")
+        anim.pack(fill=tk.X, padx=6, pady=(0, 6))
+        ttk.Label(anim, text="w = clave#mensaje:").pack(side=tk.LEFT, padx=(6, 4))
+        self.entry_anim_w = ttk.Entry(anim, width=40)
+        self.entry_anim_w.pack(side=tk.LEFT, padx=4)
+        self.var_anim_mode = tk.StringVar(value="encrypt")
+        ttk.Radiobutton(anim, text="Encrypt", value="encrypt", variable=self.var_anim_mode).pack(side=tk.LEFT, padx=4)
+        ttk.Radiobutton(anim, text="Decrypt", value="decrypt", variable=self.var_anim_mode).pack(side=tk.LEFT, padx=4)
+        self.btn_anim_generate = ttk.Button(anim, text="Generar pasos")
+        self.btn_anim_step = ttk.Button(anim, text="Paso ▶")
+        self.btn_anim_play = ttk.Button(anim, text="Play ▷")
+        self.btn_anim_pause = ttk.Button(anim, text="Pausa ⏸")
+        self.btn_anim_reset = ttk.Button(anim, text="Reset ⟲")
+        self.btn_anim_generate.pack(side=tk.LEFT, padx=4)
+        self.btn_anim_step.pack(side=tk.LEFT, padx=2)
+        self.btn_anim_play.pack(side=tk.LEFT, padx=2)
+        self.btn_anim_pause.pack(side=tk.LEFT, padx=2)
+        self.btn_anim_reset.pack(side=tk.LEFT, padx=2)
+        self.lbl_anim_info = ttk.Label(anim, text="Sin pasos", foreground="gray")
+        self.lbl_anim_info.pack(side=tk.LEFT, padx=12)
+
+        # Filtros y acciones extra para presentación
+        present = ttk.LabelFrame(root, text="Herramientas de Presentación")
+        present.pack(fill=tk.X, padx=6, pady=(0, 6))
+        ttk.Label(present, text="Filtrar etapa:").pack(side=tk.LEFT, padx=(6, 4))
+        self.combo_stage = ttk.Combobox(present, values=["(todas)"], state="readonly", width=28)
+        self.combo_stage.current(0)
+        self.combo_stage.pack(side=tk.LEFT, padx=4)
+        self.btn_stage_apply = ttk.Button(present, text="Aplicar filtro")
+        self.btn_stage_clear = ttk.Button(present, text="Limpiar filtro")
+        self.btn_export = ttk.Button(present, text="Exportar trazas")
+        self.btn_example_enc = ttk.Button(present, text="Ejemplo Encrypt")
+        self.btn_example_dec = ttk.Button(present, text="Ejemplo Decrypt")
+        self.btn_stage_apply.pack(side=tk.LEFT, padx=2)
+        self.btn_stage_clear.pack(side=tk.LEFT, padx=2)
+        self.btn_export.pack(side=tk.LEFT, padx=8)
+        self.btn_example_enc.pack(side=tk.LEFT, padx=2)
+        self.btn_example_dec.pack(side=tk.LEFT, padx=2)
+        self.lbl_stage_stats = ttk.Label(present, text="Stats: -", foreground="gray")
+        self.lbl_stage_stats.pack(side=tk.LEFT, padx=12)
+
+        # Línea de condensación
+        cond = ttk.Frame(root)
+        cond.pack(fill=tk.X, padx=6, pady=(0, 6))
+        ttk.Checkbutton(cond, text="Mostrar solo inicios/finales de etapa", variable=self.var_condense_boundaries).pack(side=tk.LEFT, padx=(4, 8))
+        ttk.Label(cond, text="Muestrear cada N pasos:").pack(side=tk.LEFT)
+        self.spin_sample = ttk.Spinbox(cond, from_=1, to=500, textvariable=self.var_sample_n, width=5)
+        self.spin_sample.pack(side=tk.LEFT, padx=4)
+        self.btn_condense_apply = ttk.Button(cond, text="Aplicar condensación")
+        self.btn_condense_clear = ttk.Button(cond, text="Quitar condensación")
+        self.btn_next_letter = ttk.Button(cond, text="Siguiente letra ▶|")
+        self.btn_condense_apply.pack(side=tk.LEFT, padx=4)
+        self.btn_condense_clear.pack(side=tk.LEFT, padx=2)
+        self.btn_next_letter.pack(side=tk.LEFT, padx=8)
+
         # Main area with canvas and side info
         main_pane = ttk.Panedwindow(root, orient=tk.HORIZONTAL)
         main_pane.pack(fill=tk.BOTH, expand=True, padx=6, pady=6)
@@ -169,6 +240,19 @@ class TMVisualizer(tk.Tk):
         self.btn_reset.configure(command=self._on_reset)
         self.btn_cesar_encrypt.configure(command=self._on_cesar_encrypt)
         self.btn_cesar_decrypt.configure(command=self._on_cesar_decrypt)
+        self.btn_anim_generate.configure(command=self._on_anim_generate)
+        self.btn_anim_step.configure(command=self._on_anim_step)
+        self.btn_anim_play.configure(command=self._on_anim_play)
+        self.btn_anim_pause.configure(command=self._on_anim_pause)
+        self.btn_anim_reset.configure(command=self._on_anim_reset)
+        self.btn_stage_apply.configure(command=self._on_stage_apply)
+        self.btn_stage_clear.configure(command=self._on_stage_clear)
+        self.btn_export.configure(command=self._on_export_pipeline)
+        self.btn_example_enc.configure(command=lambda: self._fill_example('encrypt'))
+        self.btn_example_dec.configure(command=lambda: self._fill_example('decrypt'))
+        self.btn_condense_apply.configure(command=self._on_condense_apply)
+        self.btn_condense_clear.configure(command=self._on_condense_clear)
+        self.btn_next_letter.configure(command=self._on_next_letter)
 
     # ---- Actions ----
     def _on_speed_change(self):
@@ -309,7 +393,14 @@ class TMVisualizer(tk.Tk):
 
     def _draw_tape(self):
         self.canvas.delete("all")
-        tape, head, blank = self._get_tape_snapshot()
+        active_steps = self._get_active_pipeline_steps()
+        if self.pipeline_mode and active_steps:
+            step = active_steps[self.pipeline_index]
+            tape = step.tape
+            head = step.head
+            blank = '_'
+        else:
+            tape, head, blank = self._get_tape_snapshot()
         
         # Detectar si es multi-cinta
         if self.tm and hasattr(self.tm, 'num_tapes') and self.tm.num_tapes > 1:
@@ -341,8 +432,20 @@ class TMVisualizer(tk.Tk):
                 self.canvas.create_text(x + cell_w/2, y - 18, text="▼", fill="red", font=("Arial", 20))
 
         # State label under the tape
-        self.canvas.create_text(margin_x + (min(window, len(tape)) * cell_w)/2, y + cell_h + 28,
-                                text=f"q = {self._get_state()}", fill="blue", font=("Segoe UI", 12, "bold"))
+        if self.pipeline_mode and active_steps:
+            current = active_steps[self.pipeline_index]
+            self.canvas.create_text(margin_x + (min(window, len(tape)) * cell_w)/2, y + cell_h + 16,
+                                    text=f"Etapa: {current.stage}", fill="purple", font=("Segoe UI", 11, "bold"))
+            self.canvas.create_text(margin_x + (min(window, len(tape)) * cell_w)/2, y + cell_h + 36,
+                                    text=f"q = {current.state}", fill="blue", font=("Segoe UI", 12, "bold"))
+            # Mostrar delta si disponible
+            if current.delta:
+                d_q, d_w, d_m = current.delta
+                self.canvas.create_text(margin_x + (min(window, len(tape)) * cell_w)/2, y + cell_h + 56,
+                                        text=f"δ: ({d_q}, {d_w}, {d_m})", fill="darkgreen", font=("Segoe UI", 10))
+        else:
+            self.canvas.create_text(margin_x + (min(window, len(tape)) * cell_w)/2, y + cell_h + 28,
+                                    text=f"q = {self._get_state()}", fill="blue", font=("Segoe UI", 12, "bold"))
 
     def _draw_multitape(self):
         """Dibuja múltiples cintas para MTs multi-cinta"""
@@ -481,6 +584,225 @@ class TMVisualizer(tk.Tk):
         except Exception as e:
             self._log(f"[César][Error Decrypt] {e}")
             self.lbl_cesar_status.configure(text="Error", foreground="red")
+
+    # ---- Animación Pipeline César ----
+    def _on_anim_generate(self):
+        if build_encrypt_pipeline is None or build_decrypt_pipeline is None:
+            self._log("[Anim] Pipeline no disponible")
+            return
+        w = self.entry_anim_w.get().strip()
+        if '#' not in w:
+            self._log("[Anim] Formato inválido: falta '#'")
+            return
+        mode = self.var_anim_mode.get()
+        try:
+            if mode == 'encrypt':
+                result = build_encrypt_pipeline(w)
+            else:
+                result = build_decrypt_pipeline(w)
+        except Exception as e:
+            self._log(f"[Anim] Error generando pasos: {e}")
+            self.lbl_anim_info.configure(text="Error", foreground="red")
+            return
+        self.pipeline_steps = result.steps
+        self.pipeline_index = 0
+        self.pipeline_mode = True
+        self.pipeline_playing = False
+        self._refresh_view(delta=None)
+        self.lbl_anim_info.configure(text=f"{len(self.pipeline_steps)} pasos - Resultado: {result.output}", foreground="green")
+        self._log(f"[Anim] Generados {len(self.pipeline_steps)} pasos. Resultado final: {result.output}")
+        self._update_stage_stats()
+        self._populate_stage_combo()
+
+    def _on_anim_step(self):
+        active_steps = self._get_active_pipeline_steps()
+        if not self.pipeline_mode or not active_steps:
+            return
+        if self.pipeline_index < len(active_steps) - 1:
+            self.pipeline_index += 1
+        self._refresh_view(delta=None)
+
+    def _on_anim_play(self):
+        if not self.pipeline_mode or not self.pipeline_steps:
+            return
+        if self.pipeline_playing:
+            return
+        self.pipeline_playing = True
+        self._anim_loop()
+
+    def _anim_loop(self):
+        if not self.pipeline_playing:
+            return
+        active_steps = self._get_active_pipeline_steps()
+        if self.pipeline_index < len(active_steps) - 1:
+            self.pipeline_index += 1
+            self._refresh_view(delta=None)
+            self.after(self.step_delay_ms.get(), self._anim_loop)
+        else:
+            self.pipeline_playing = False
+            self._log("[Anim] Fin de animación")
+
+    def _on_anim_pause(self):
+        self.pipeline_playing = False
+
+    def _on_anim_reset(self):
+        self.pipeline_playing = False
+        self.pipeline_index = 0
+        if self.pipeline_mode and self._get_active_pipeline_steps():
+            self._refresh_view(delta=None)
+        self._log("[Anim] Reset índice a 0")
+
+    # ---- Filtros y utilidades de presentación ----
+    def _get_active_pipeline_steps(self):
+        if self.pipeline_use_filtered and self.pipeline_filtered_steps:
+            return self.pipeline_filtered_steps
+        return self.pipeline_steps
+
+    def _populate_stage_combo(self):
+        if not self.pipeline_steps:
+            self.combo_stage.configure(values=["(todas)"])
+            self.combo_stage.current(0)
+            return
+        stages = []
+        for s in self.pipeline_steps:
+            if s.stage not in stages:
+                stages.append(s.stage)
+        self.combo_stage.configure(values=["(todas)"] + stages)
+        self.combo_stage.current(0)
+
+    def _update_stage_stats(self):
+        counts = {}
+        for s in self.pipeline_steps:
+            counts[s.stage] = counts.get(s.stage, 0) + 1
+        self.pipeline_stage_counts = counts
+        parts = [f"{k}: {v}" for k, v in counts.items()]
+        self.lbl_stage_stats.configure(text="Stats: " + (', '.join(parts) if parts else '-'))
+
+    def _on_stage_apply(self):
+        selected = self.combo_stage.get()
+        if selected == "(todas)" or not selected:
+            self.pipeline_use_filtered = False
+            self.pipeline_filtered_steps = []
+            self.pipeline_index = 0
+            self._refresh_view(delta=None)
+            self._log("[Filtro] Mostrando todas las etapas")
+            return
+        self.pipeline_filtered_steps = [s for s in self.pipeline_steps if s.stage == selected]
+        self.pipeline_use_filtered = True
+        self.pipeline_index = 0
+        self._refresh_view(delta=None)
+        self._log(f"[Filtro] Filtrada etapa '{selected}' con {len(self.pipeline_filtered_steps)} pasos")
+        self.lbl_anim_info.configure(text=f"Filtro '{selected}' pasos: {len(self.pipeline_filtered_steps)}", foreground="blue")
+
+    def _on_stage_clear(self):
+        if not self.pipeline_use_filtered:
+            return
+        self.pipeline_use_filtered = False
+        self.pipeline_filtered_steps = []
+        self.pipeline_index = 0
+        self._refresh_view(delta=None)
+        self._log("[Filtro] Filtro eliminado")
+        self.lbl_anim_info.configure(text=f"{len(self.pipeline_steps)} pasos (sin filtro)", foreground="green")
+
+    def _on_export_pipeline(self):
+        steps = self._get_active_pipeline_steps()
+        if not steps:
+            self._log("[Export] No hay pasos para exportar")
+            return
+        try:
+            fn = filedialog.asksaveasfilename(title="Guardar trazas", defaultextension=".txt", filetypes=[("Texto", "*.txt")])
+            if not fn:
+                return
+            with open(fn, 'w', encoding='utf-8') as f:
+                for i, s in enumerate(steps):
+                    delta_txt = f"delta={s.delta}" if s.delta else "delta=None"
+                    f.write(f"#{i}\tstage={s.stage}\tstate={s.state}\thead={s.head}\t{delta_txt}\ttape={''.join(s.tape)}\n")
+            self._log(f"[Export] Guardado archivo: {fn}")
+        except Exception as e:
+            self._log(f"[Export] Error: {e}")
+
+    def _fill_example(self, mode: str):
+        if mode == 'encrypt':
+            self.entry_anim_w.delete(0, tk.END)
+            self.entry_anim_w.insert(0, '3#ROMA')
+            self.var_anim_mode.set('encrypt')
+            self._log('[Ejemplo] Cargado ejemplo cifrado 3#ROMA')
+        else:
+            self.entry_anim_w.delete(0, tk.END)
+            self.entry_anim_w.insert(0, '3#URPD')
+            self.var_anim_mode.set('decrypt')
+            self._log('[Ejemplo] Cargado ejemplo descifrado 3#URPD')
+
+    # ---- Condensación y navegación ----
+    def _on_condense_apply(self):
+        base = self._get_active_pipeline_steps()
+        if not base:
+            return
+        result = base
+        if self.var_condense_boundaries.get():
+            result = []
+            prev_stage = None
+            prev_step = None
+            for s in base:
+                if s.stage != prev_stage:
+                    # inicio de etapa
+                    result.append(s)
+                    if prev_step is not None and prev_step is not result[-1]:
+                        # fin de etapa anterior
+                        if result[-1] is not prev_step:
+                            result.append(prev_step)
+                prev_stage = s.stage
+                prev_step = s
+            # añadir último fin de etapa
+            if prev_step is not None and (not result or result[-1] is not prev_step):
+                result.append(prev_step)
+        # Muestreo cada N
+        n = max(1, int(self.var_sample_n.get() or 1))
+        if n > 1 and result:
+            sampled = [result[i] for i in range(0, len(result), n)]
+            if sampled[-1] is not result[-1]:
+                sampled.append(result[-1])
+            result = sampled
+        self.pipeline_filtered_steps = result
+        self.pipeline_use_filtered = True
+        self.pipeline_index = 0
+        self._refresh_view(delta=None)
+        self.lbl_anim_info.configure(text=f"Condensado: {len(result)} pasos", foreground="blue")
+        self._log(f"[Condensación] Lista reducida a {len(result)} pasos")
+
+    def _on_condense_clear(self):
+        if not self.pipeline_use_filtered:
+            return
+        # Si había un filtro previo de etapa, lo mantenemos: reaplicar filtro de etapa si no está en (todas)
+        selected = self.combo_stage.get()
+        self.pipeline_use_filtered = False
+        self.pipeline_filtered_steps = []
+        if selected and selected != "(todas)":
+            # re-aplicar filtro de etapa sobre todos los pasos
+            self.pipeline_filtered_steps = [s for s in self.pipeline_steps if s.stage == selected]
+            self.pipeline_use_filtered = True
+        self.pipeline_index = 0
+        self._refresh_view(delta=None)
+        self.lbl_anim_info.configure(text=f"{len(self._get_active_pipeline_steps())} pasos (sin condensación)", foreground="green")
+        self._log("[Condensación] Eliminada")
+
+    def _on_next_letter(self):
+        steps = self._get_active_pipeline_steps()
+        if not steps:
+            return
+        cur = steps[self.pipeline_index]
+        import re
+        m = re.match(r"^\[(\d+)\]", cur.stage)
+        cur_idx = m.group(1) if m else None
+        for i in range(self.pipeline_index + 1, len(steps)):
+            s = steps[i]
+            m2 = re.match(r"^\[(\d+)\]", s.stage)
+            idx2 = m2.group(1) if m2 else None
+            if idx2 is not None and idx2 != cur_idx:
+                self.pipeline_index = i
+                self._refresh_view(delta=None)
+                self._log(f"[Navegación] Saltado a letra índice {idx2}")
+                return
 
     # ---- Utilities for input validation and examples ----
     def _find_invalid_symbols(self, w: str) -> set[str]:

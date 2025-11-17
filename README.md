@@ -141,3 +141,50 @@ Se intentó generar versiones unificadas (`caesar_encrypt_full.json`, `caesar_de
 
 Para construir una MT unificada funcional en el futuro se puede extender el script prototipo (eliminado en esta versión) agregando transiciones de integración completa.
 
+## 🎞️ Animación Paso a Paso del Cifrado César
+
+La GUI (`python -m src.gui.app`) ahora incluye un panel "Animación Paso a Paso César" que permite visualizar cada transición aplicada dentro de cada máquina modular del pipeline.
+
+### ¿Qué se anima?
+Se registran y muestran todas las etapas:
+- Procesamiento de la clave (número→letra, letra→marcas, resta 26 - k para descifrado)
+- Para cada carácter alfabético del mensaje:
+	- letra→marcas
+	- suma con desplazamiento (o desplazamiento inverso)
+	- reducción módulo 26
+	- marcas→letra final
+
+Cada transición de cada sub‑máquina genera un snapshot (cinta, posición del cabezal, estado y transición δ aplicada). Estos snapshots se reproducen en la interfaz.
+
+### Uso Rápido
+1. Ejecutar: `python -m src.gui.app`
+2. Panel "Animación Paso a Paso César":
+	 - Ingresar `w = clave#mensaje` (ej: `3#ABC` o `D#HOLA`)
+	 - Seleccionar Encrypt o Decrypt.
+	 - Pulsar "Generar pasos".
+	 - Usar "Play" para animación continua o "Paso" para avanzar uno.
+	 - "Reset" vuelve al primer snapshot.
+3. El label de estado muestra: cantidad total de pasos y resultado final del cifrado/descifrado.
+
+Nota: Mensajes largos generan muchos pasos (miles). Para demostraciones rápidas usar ejemplos cortos (`3#ABC`).
+
+## 🖥️ Herramientas de Presentación en la GUI
+
+El panel adicional "Herramientas de Presentación" facilita explicar el funcionamiento interno:
+
+- Filtro de etapa: Permite seleccionar una etapa específica (p.ej. `"[2] suma marcas + shift"`) y reproducir solo esos pasos.
+- Estadísticas: Muestra conteo de pasos por etapa para evidenciar complejidad relativa de cada fase (ej. mod26 suele ser la más larga).
+- Exportar trazas: Genera un archivo `.txt` con todas las transiciones (estado, símbolo escrito, movimiento, cinta completa) para incluir en el informe técnico.
+- Ejemplos rápidos: Botones para precargar `3#ROMA` (cifrado) y `3#URPD` (descifrado) para mostrar ciclo completo en pocos segundos.
+- Visualización de δ: En modo animación se muestra la transición aplicada (δ) bajo la cinta junto con el estado y la etiqueta de etapa.
+- Modo condensado: opción para mostrar solo inicios/finales de etapa y/o muestrear cada N pasos, reduciendo miles de pasos a decenas.
+- Navegación por letra: botón “Siguiente letra” que salta al siguiente bloque de etapas del siguiente carácter del mensaje.
+
+### Flujo Recomendado para la Presentación
+1. Mostrar una sub‑MT aislada cargando un JSON (ej. `letter_to_number.json`). Ejecutar unos pasos manuales.
+2. Cambiar al panel de Animación y generar pasos para `3#ROMA` (Encrypt). Explicar cada etapa usando el filtro y las estadísticas.
+3. Exportar las trazas y comentar brevemente el volumen de pasos vs. simplicidad conceptual del algoritmo.
+4. Repetir con `3#URPD` (Decrypt) destacando el uso de la resta `26 - k`.
+5. Resaltar modularidad y cómo cada sub‑MT respeta el modelo clásico (solo estado, símbolo, movimiento).
+
+
