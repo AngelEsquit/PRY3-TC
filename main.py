@@ -10,6 +10,8 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from caesar_cipher_tm import CaesarCipherTM
+from caesar_encrypt_tm import CaesarEncryptTM
+from caesar_decrypt_tm import CaesarDecryptTM
 
 
 def parse_w(w: str):
@@ -206,15 +208,18 @@ def encrypt_w():
         print("⚠️  Entrada vacía")
         return
     try:
-        shift, message = parse_w(w)
-    except ValueError as e:
-        print(f"⚠️  {e}")
+        key, message = w.split('#', 1)
+        key = key.strip(); message = message.strip()
+        if not key or not message:
+            raise ValueError('Formato inválido')
+    except Exception:
+        print("⚠️  Formato inválido: use clave#mensaje")
         return
-    cipher_local = CaesarCipherTM(shift=shift, debug=False)
-    print("Procesando...")
-    encrypted = cipher_local.encrypt(message)
+    enc = CaesarEncryptTM(debug=False)
+    print("Procesando (solo MTs para clave y aritmética)...")
+    encrypted = enc.encrypt_w(w)
     print("\n" + "-"*70)
-    print(f"Clave (shift): {shift}")
+    print(f"Clave: {key}")
     print(f"Mensaje original: {message}")
     print(f"Mensaje cifrado : {encrypted}")
     print("-"*70)
@@ -230,15 +235,18 @@ def decrypt_w():
         print("⚠️  Entrada vacía")
         return
     try:
-        shift, message = parse_w(w)
-    except ValueError as e:
-        print(f"⚠️  {e}")
+        key, message = w.split('#', 1)
+        key = key.strip(); message = message.strip()
+        if not key or not message:
+            raise ValueError('Formato inválido')
+    except Exception:
+        print("⚠️  Formato inválido: use clave#mensaje")
         return
-    cipher_local = CaesarCipherTM(shift=shift, debug=False)
-    print("Procesando...")
-    decrypted = cipher_local.decrypt(message)
+    dec = CaesarDecryptTM(debug=False)
+    print("Procesando (solo MTs para clave y aritmética)...")
+    decrypted = dec.decrypt_w(w)
     print("\n" + "-"*70)
-    print(f"Clave (shift): {shift}")
+    print(f"Clave: {key}")
     print(f"Mensaje cifrado   : {message}")
     print(f"Mensaje descifrado : {decrypted}")
     print("-"*70)

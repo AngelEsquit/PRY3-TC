@@ -102,16 +102,42 @@ python tests\test_conversions.py
 
 **Total: 7/7 grupos exitosos** 🎉
 
-## 🏗️ Arquitectura
+## 🏗️ Arquitectura Modular
 
-El sistema está compuesto por múltiples Máquinas de Turing especializadas:
+La implementación entregable usa un enfoque MODULAR (varias MT separadas) en lugar de una sola MT gigante. Cada operación del cifrado César se realiza por una MT independiente descrita en JSON, y el código Python solo coordina su ejecución (no hace aritmética ni transformaciones internas de símbolos). Esto respeta las restricciones de la especificación.
 
-1. **TuringMachine** (clase base): Motor genérico de MT
-2. **Suma**: Concatenación de marcas (`||+|||` → `|||||`)
-3. **Resta**: Eliminación de marcas (`|||||−||` → `|||`)
-4. **Letra→Número**: Convierte letras a marcas (H → `||||||||`)
-5. **Número→Letra**: Convierte marcas a letras (`||||||||` → H)
-6. **CaesarCipherTM**: Orquesta todas las MTs para cifrado completo
+### Máquinas JSON Core (config/)
+- `letter_to_number.json`: letra → marcas (A=0 marcas, B=1, ..., Z=25)
+- `number_to_letter.json`: marcas → letra
+- `add_simple.json`: suma en marcas (concatena y borra '+')
+- `subtract_simple.json`: resta (para obtener desplazamiento inverso en descifrado)
+- `mod26_full.json`: cálculo de n mod 26 eliminando bloques de 26
+- `number_key_to_letter.json`: clave numérica 1..27 → letra (k % 26)
 
-Todas las operaciones respetan las restricciones de MT puras (solo lectura/escritura/movimiento/cambio de estado).
+### Flujo Modular de Encripción
+1. Clave w: si numérica → `number_key_to_letter.json` → letra; si letra se usa directamente.
+2. Letra clave → marcas: `letter_to_number.json` (shift).
+3. Para cada letra del mensaje:
+	- Letra → marcas (`letter_to_number.json`)
+	- Suma de marcas con shift (`add_simple.json`)
+	- Reducción módulo 26 (`mod26_full.json`)
+	- Marcas → letra cifrada (`number_to_letter.json`)
+
+### Flujo Modular de Decripción
+1. Clave w procesada igual que en cifrado.
+2. (26 − k) mediante resta de marcas: construir 26 marcas y aplicar `subtract_simple.json` con k marcas.
+3. Cada letra cifrada sigue el mismo pipeline de suma y mod usando el desplazamiento inverso.
+
+### Razones para no usar la MT Unificada
+Se intentó generar versiones unificadas (`caesar_encrypt_full.json`, `caesar_decrypt_full.json`) pero se mantienen fuera del entregable porque:
+1. Generan cientos de estados/transiciones difíciles de verificar manualmente.
+2. La versión prototipo no completó correctamente el cifrado (falla en pruebas).
+3. La modular mantiene claridad, reutilización y pruebas unitarias con trazabilidad directa.
+
+### Cumplimiento de Especificaciones
+- Operaciones aritméticas y conversión realizadas exclusivamente con MTs.
+- Entrada `w = clave#mensaje` procesada sin aritmética Python (la clave pasa por MTs).
+- Dos máquinas de alto nivel (encriptar/descifrar) representadas por las clases `CaesarEncryptTM` y `CaesarDecryptTM` que orquestan únicamente MTs.
+
+Para construir una MT unificada funcional en el futuro se puede extender el script prototipo (eliminado en esta versión) agregando transiciones de integración completa.
 

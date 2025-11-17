@@ -13,6 +13,7 @@ class CaesarEncryptTM:
         self.tm_add = TuringMachine()
         self.tm_mod26 = TuringMachine()
         self.tm_num_to_letter = TuringMachine()
+        self.tm_number_key_to_letter = TuringMachine()
         if not self.tm_letter_to_num.load_config(os.path.join(config_dir, 'letter_to_number.json')):
             raise RuntimeError('No se pudo cargar letter_to_number.json')
         if not self.tm_add.load_config(os.path.join(config_dir, 'add_simple.json')):
@@ -21,8 +22,28 @@ class CaesarEncryptTM:
             raise RuntimeError('No se pudo cargar mod26_full.json')
         if not self.tm_num_to_letter.load_config(os.path.join(config_dir, 'number_to_letter.json')):
             raise RuntimeError('No se pudo cargar number_to_letter.json')
-        # Preconstruir las marcas de shift (permitido como parte de la preparación de entrada)
+        if not self.tm_number_key_to_letter.load_config(os.path.join(config_dir, 'number_key_to_letter.json')):
+            raise RuntimeError('No se pudo cargar number_key_to_letter.json')
+        # Preconstruir las marcas de shift para compatibilidad con rutas antiguas
         self.shift_marks = '|' * self.shift if self.shift > 0 else ''
+
+    def _key_to_shift_marks(self, raw_key: str) -> str:
+        """Convierte clave (número 1..27 o letra A..Z) a marcas '|' usando solo MTs.
+        - Si es letra: usa letter_to_number -> marcas.
+        - Si es número: numero->letra (MT) y luego letra->marcas (MT).
+        Devuelve la secuencia de '|' (puede ser cadena vacía si shift=0).
+        """
+        if len(raw_key) == 1 and raw_key.isalpha():
+            upper = raw_key.upper()
+            res = self.tm_letter_to_num.run(upper, max_steps=2000)
+            return ''.join(ch for ch in res if ch == '|')
+        # numérico: 1..27
+        if raw_key.isdigit():
+            letter_res = self.tm_number_key_to_letter.run(raw_key, max_steps=2000)
+            key_letter = next((c for c in letter_res if c.isalpha()), 'A')
+            marks_res = self.tm_letter_to_num.run(key_letter, max_steps=2000)
+            return ''.join(ch for ch in marks_res if ch == '|')
+        raise ValueError("Clave inválida: debe ser número (1-27) o letra A-Z")
 
     def _encrypt_letter(self, letter: str) -> str:
         if not letter.isalpha():
@@ -46,3 +67,16 @@ class CaesarEncryptTM:
 
     def encrypt(self, text: str) -> str:
         return ''.join(self._encrypt_letter(c) for c in text)
+
+    def encrypt_w(self, w: str) -> str:
+        """Cifra a partir de w=clave#mensaje sin aritmética en Python.
+        Usa MTs para derivar las marcas de la clave.
+        """
+        if '#' not in w:
+            raise ValueError("Formato inválido: falta '#' en w")
+        raw_key, message = w.split('#', 1)
+        raw_key = raw_key.strip()
+        message = message.strip()
+        shift_marks = self._key_to_shift_marks(raw_key)
+        self.shift_marks = shift_marks  # usar en pipeline existente
+        return self.encrypt(message)

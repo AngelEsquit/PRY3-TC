@@ -1,0 +1,4836 @@
+{
+  "description": "MT unificada para decripción (simplificada demostrativa)",
+  "states": [
+    "q_start",
+    "q_read_key",
+    "q_key_done",
+    "q_read_char",
+    "q_copy_nonalpha",
+    "q_prepare_letter",
+    "q_pipeline_done",
+    "q_accept",
+    "L2N_q0",
+    "L2N_q_write",
+    "L2N_q_accept",
+    "L2N_q_write_B_1",
+    "L2N_q_write_C_1",
+    "L2N_q_write_C_2",
+    "L2N_q_write_D_1",
+    "L2N_q_write_D_2",
+    "L2N_q_write_D_3",
+    "L2N_q_write_E_1",
+    "L2N_q_write_E_2",
+    "L2N_q_write_E_3",
+    "L2N_q_write_E_4",
+    "L2N_q_write_F_1",
+    "L2N_q_write_F_2",
+    "L2N_q_write_F_3",
+    "L2N_q_write_F_4",
+    "L2N_q_write_F_5",
+    "L2N_q_write_G_1",
+    "L2N_q_write_G_2",
+    "L2N_q_write_G_3",
+    "L2N_q_write_G_4",
+    "L2N_q_write_G_5",
+    "L2N_q_write_G_6",
+    "L2N_q_write_H_1",
+    "L2N_q_write_H_2",
+    "L2N_q_write_H_3",
+    "L2N_q_write_H_4",
+    "L2N_q_write_H_5",
+    "L2N_q_write_H_6",
+    "L2N_q_write_H_7",
+    "L2N_q_write_I_1",
+    "L2N_q_write_I_2",
+    "L2N_q_write_I_3",
+    "L2N_q_write_I_4",
+    "L2N_q_write_I_5",
+    "L2N_q_write_I_6",
+    "L2N_q_write_I_7",
+    "L2N_q_write_I_8",
+    "L2N_q_write_J_1",
+    "L2N_q_write_J_2",
+    "L2N_q_write_J_3",
+    "L2N_q_write_J_4",
+    "L2N_q_write_J_5",
+    "L2N_q_write_J_6",
+    "L2N_q_write_J_7",
+    "L2N_q_write_J_8",
+    "L2N_q_write_J_9",
+    "L2N_q_write_K_1",
+    "L2N_q_write_K_2",
+    "L2N_q_write_K_3",
+    "L2N_q_write_K_4",
+    "L2N_q_write_K_5",
+    "L2N_q_write_K_6",
+    "L2N_q_write_K_7",
+    "L2N_q_write_K_8",
+    "L2N_q_write_K_9",
+    "L2N_q_write_K_10",
+    "L2N_q_write_L_1",
+    "L2N_q_write_L_2",
+    "L2N_q_write_L_3",
+    "L2N_q_write_L_4",
+    "L2N_q_write_L_5",
+    "L2N_q_write_L_6",
+    "L2N_q_write_L_7",
+    "L2N_q_write_L_8",
+    "L2N_q_write_L_9",
+    "L2N_q_write_L_10",
+    "L2N_q_write_L_11",
+    "L2N_q_write_M_1",
+    "L2N_q_write_M_2",
+    "L2N_q_write_M_3",
+    "L2N_q_write_M_4",
+    "L2N_q_write_M_5",
+    "L2N_q_write_M_6",
+    "L2N_q_write_M_7",
+    "L2N_q_write_M_8",
+    "L2N_q_write_M_9",
+    "L2N_q_write_M_10",
+    "L2N_q_write_M_11",
+    "L2N_q_write_M_12",
+    "L2N_q_write_N_1",
+    "L2N_q_write_N_2",
+    "L2N_q_write_N_3",
+    "L2N_q_write_N_4",
+    "L2N_q_write_N_5",
+    "L2N_q_write_N_6",
+    "L2N_q_write_N_7",
+    "L2N_q_write_N_8",
+    "L2N_q_write_N_9",
+    "L2N_q_write_N_10",
+    "L2N_q_write_N_11",
+    "L2N_q_write_N_12",
+    "L2N_q_write_N_13",
+    "L2N_q_write_O_1",
+    "L2N_q_write_O_2",
+    "L2N_q_write_O_3",
+    "L2N_q_write_O_4",
+    "L2N_q_write_O_5",
+    "L2N_q_write_O_6",
+    "L2N_q_write_O_7",
+    "L2N_q_write_O_8",
+    "L2N_q_write_O_9",
+    "L2N_q_write_O_10",
+    "L2N_q_write_O_11",
+    "L2N_q_write_O_12",
+    "L2N_q_write_O_13",
+    "L2N_q_write_O_14",
+    "L2N_q_write_P_1",
+    "L2N_q_write_P_2",
+    "L2N_q_write_P_3",
+    "L2N_q_write_P_4",
+    "L2N_q_write_P_5",
+    "L2N_q_write_P_6",
+    "L2N_q_write_P_7",
+    "L2N_q_write_P_8",
+    "L2N_q_write_P_9",
+    "L2N_q_write_P_10",
+    "L2N_q_write_P_11",
+    "L2N_q_write_P_12",
+    "L2N_q_write_P_13",
+    "L2N_q_write_P_14",
+    "L2N_q_write_P_15",
+    "L2N_q_write_Q_1",
+    "L2N_q_write_Q_2",
+    "L2N_q_write_Q_3",
+    "L2N_q_write_Q_4",
+    "L2N_q_write_Q_5",
+    "L2N_q_write_Q_6",
+    "L2N_q_write_Q_7",
+    "L2N_q_write_Q_8",
+    "L2N_q_write_Q_9",
+    "L2N_q_write_Q_10",
+    "L2N_q_write_Q_11",
+    "L2N_q_write_Q_12",
+    "L2N_q_write_Q_13",
+    "L2N_q_write_Q_14",
+    "L2N_q_write_Q_15",
+    "L2N_q_write_Q_16",
+    "L2N_q_write_R_1",
+    "L2N_q_write_R_2",
+    "L2N_q_write_R_3",
+    "L2N_q_write_R_4",
+    "L2N_q_write_R_5",
+    "L2N_q_write_R_6",
+    "L2N_q_write_R_7",
+    "L2N_q_write_R_8",
+    "L2N_q_write_R_9",
+    "L2N_q_write_R_10",
+    "L2N_q_write_R_11",
+    "L2N_q_write_R_12",
+    "L2N_q_write_R_13",
+    "L2N_q_write_R_14",
+    "L2N_q_write_R_15",
+    "L2N_q_write_R_16",
+    "L2N_q_write_R_17",
+    "L2N_q_write_S_1",
+    "L2N_q_write_S_2",
+    "L2N_q_write_S_3",
+    "L2N_q_write_S_4",
+    "L2N_q_write_S_5",
+    "L2N_q_write_S_6",
+    "L2N_q_write_S_7",
+    "L2N_q_write_S_8",
+    "L2N_q_write_S_9",
+    "L2N_q_write_S_10",
+    "L2N_q_write_S_11",
+    "L2N_q_write_S_12",
+    "L2N_q_write_S_13",
+    "L2N_q_write_S_14",
+    "L2N_q_write_S_15",
+    "L2N_q_write_S_16",
+    "L2N_q_write_S_17",
+    "L2N_q_write_S_18",
+    "L2N_q_write_T_1",
+    "L2N_q_write_T_2",
+    "L2N_q_write_T_3",
+    "L2N_q_write_T_4",
+    "L2N_q_write_T_5",
+    "L2N_q_write_T_6",
+    "L2N_q_write_T_7",
+    "L2N_q_write_T_8",
+    "L2N_q_write_T_9",
+    "L2N_q_write_T_10",
+    "L2N_q_write_T_11",
+    "L2N_q_write_T_12",
+    "L2N_q_write_T_13",
+    "L2N_q_write_T_14",
+    "L2N_q_write_T_15",
+    "L2N_q_write_T_16",
+    "L2N_q_write_T_17",
+    "L2N_q_write_T_18",
+    "L2N_q_write_T_19",
+    "L2N_q_write_U_1",
+    "L2N_q_write_U_2",
+    "L2N_q_write_U_3",
+    "L2N_q_write_U_4",
+    "L2N_q_write_U_5",
+    "L2N_q_write_U_6",
+    "L2N_q_write_U_7",
+    "L2N_q_write_U_8",
+    "L2N_q_write_U_9",
+    "L2N_q_write_U_10",
+    "L2N_q_write_U_11",
+    "L2N_q_write_U_12",
+    "L2N_q_write_U_13",
+    "L2N_q_write_U_14",
+    "L2N_q_write_U_15",
+    "L2N_q_write_U_16",
+    "L2N_q_write_U_17",
+    "L2N_q_write_U_18",
+    "L2N_q_write_U_19",
+    "L2N_q_write_U_20",
+    "L2N_q_write_V_1",
+    "L2N_q_write_V_2",
+    "L2N_q_write_V_3",
+    "L2N_q_write_V_4",
+    "L2N_q_write_V_5",
+    "L2N_q_write_V_6",
+    "L2N_q_write_V_7",
+    "L2N_q_write_V_8",
+    "L2N_q_write_V_9",
+    "L2N_q_write_V_10",
+    "L2N_q_write_V_11",
+    "L2N_q_write_V_12",
+    "L2N_q_write_V_13",
+    "L2N_q_write_V_14",
+    "L2N_q_write_V_15",
+    "L2N_q_write_V_16",
+    "L2N_q_write_V_17",
+    "L2N_q_write_V_18",
+    "L2N_q_write_V_19",
+    "L2N_q_write_V_20",
+    "L2N_q_write_V_21",
+    "L2N_q_write_W_1",
+    "L2N_q_write_W_2",
+    "L2N_q_write_W_3",
+    "L2N_q_write_W_4",
+    "L2N_q_write_W_5",
+    "L2N_q_write_W_6",
+    "L2N_q_write_W_7",
+    "L2N_q_write_W_8",
+    "L2N_q_write_W_9",
+    "L2N_q_write_W_10",
+    "L2N_q_write_W_11",
+    "L2N_q_write_W_12",
+    "L2N_q_write_W_13",
+    "L2N_q_write_W_14",
+    "L2N_q_write_W_15",
+    "L2N_q_write_W_16",
+    "L2N_q_write_W_17",
+    "L2N_q_write_W_18",
+    "L2N_q_write_W_19",
+    "L2N_q_write_W_20",
+    "L2N_q_write_W_21",
+    "L2N_q_write_W_22",
+    "L2N_q_write_X_1",
+    "L2N_q_write_X_2",
+    "L2N_q_write_X_3",
+    "L2N_q_write_X_4",
+    "L2N_q_write_X_5",
+    "L2N_q_write_X_6",
+    "L2N_q_write_X_7",
+    "L2N_q_write_X_8",
+    "L2N_q_write_X_9",
+    "L2N_q_write_X_10",
+    "L2N_q_write_X_11",
+    "L2N_q_write_X_12",
+    "L2N_q_write_X_13",
+    "L2N_q_write_X_14",
+    "L2N_q_write_X_15",
+    "L2N_q_write_X_16",
+    "L2N_q_write_X_17",
+    "L2N_q_write_X_18",
+    "L2N_q_write_X_19",
+    "L2N_q_write_X_20",
+    "L2N_q_write_X_21",
+    "L2N_q_write_X_22",
+    "L2N_q_write_X_23",
+    "L2N_q_write_Y_1",
+    "L2N_q_write_Y_2",
+    "L2N_q_write_Y_3",
+    "L2N_q_write_Y_4",
+    "L2N_q_write_Y_5",
+    "L2N_q_write_Y_6",
+    "L2N_q_write_Y_7",
+    "L2N_q_write_Y_8",
+    "L2N_q_write_Y_9",
+    "L2N_q_write_Y_10",
+    "L2N_q_write_Y_11",
+    "L2N_q_write_Y_12",
+    "L2N_q_write_Y_13",
+    "L2N_q_write_Y_14",
+    "L2N_q_write_Y_15",
+    "L2N_q_write_Y_16",
+    "L2N_q_write_Y_17",
+    "L2N_q_write_Y_18",
+    "L2N_q_write_Y_19",
+    "L2N_q_write_Y_20",
+    "L2N_q_write_Y_21",
+    "L2N_q_write_Y_22",
+    "L2N_q_write_Y_23",
+    "L2N_q_write_Y_24",
+    "L2N_q_write_Z_1",
+    "L2N_q_write_Z_2",
+    "L2N_q_write_Z_3",
+    "L2N_q_write_Z_4",
+    "L2N_q_write_Z_5",
+    "L2N_q_write_Z_6",
+    "L2N_q_write_Z_7",
+    "L2N_q_write_Z_8",
+    "L2N_q_write_Z_9",
+    "L2N_q_write_Z_10",
+    "L2N_q_write_Z_11",
+    "L2N_q_write_Z_12",
+    "L2N_q_write_Z_13",
+    "L2N_q_write_Z_14",
+    "L2N_q_write_Z_15",
+    "L2N_q_write_Z_16",
+    "L2N_q_write_Z_17",
+    "L2N_q_write_Z_18",
+    "L2N_q_write_Z_19",
+    "L2N_q_write_Z_20",
+    "L2N_q_write_Z_21",
+    "L2N_q_write_Z_22",
+    "L2N_q_write_Z_23",
+    "L2N_q_write_Z_24",
+    "L2N_q_write_Z_25",
+    "ADD_q0",
+    "ADD_q_erase_plus",
+    "ADD_q_accept",
+    "MOD_q0",
+    "MOD_q1",
+    "MOD_q2",
+    "MOD_q3",
+    "MOD_q4",
+    "MOD_q5",
+    "MOD_q6",
+    "MOD_q7",
+    "MOD_q8",
+    "MOD_q9",
+    "MOD_q10",
+    "MOD_q11",
+    "MOD_q12",
+    "MOD_q13",
+    "MOD_q14",
+    "MOD_q15",
+    "MOD_q16",
+    "MOD_q17",
+    "MOD_q18",
+    "MOD_q19",
+    "MOD_q20",
+    "MOD_q21",
+    "MOD_q22",
+    "MOD_q23",
+    "MOD_q24",
+    "MOD_q25",
+    "MOD_q26",
+    "MOD_q_erase",
+    "MOD_q_restore",
+    "MOD_q_restart",
+    "MOD_q_accept",
+    "N2L_q0",
+    "N2L_q_1",
+    "N2L_q_2",
+    "N2L_q_3",
+    "N2L_q_4",
+    "N2L_q_5",
+    "N2L_q_6",
+    "N2L_q_7",
+    "N2L_q_8",
+    "N2L_q_9",
+    "N2L_q_10",
+    "N2L_q_11",
+    "N2L_q_12",
+    "N2L_q_13",
+    "N2L_q_14",
+    "N2L_q_15",
+    "N2L_q_16",
+    "N2L_q_17",
+    "N2L_q_18",
+    "N2L_q_19",
+    "N2L_q_20",
+    "N2L_q_21",
+    "N2L_q_22",
+    "N2L_q_23",
+    "N2L_q_24",
+    "N2L_q_25",
+    "N2L_q_26",
+    "N2L_q_back",
+    "N2L_q_accept"
+  ],
+  "input_alphabet": [
+    "#",
+    "+",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+    "|"
+  ],
+  "tape_alphabet": [
+    "#",
+    "+",
+    "-",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+    "_",
+    "|"
+  ],
+  "initial_state": "q_start",
+  "accept_states": [
+    "q_accept"
+  ],
+  "blank_symbol": "_",
+  "transitions": [
+    {
+      "current_state": "q_start",
+      "read_symbol": "A",
+      "next_state": "L2N_q0",
+      "write_symbol": "A",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "B",
+      "next_state": "L2N_q0",
+      "write_symbol": "B",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "C",
+      "next_state": "L2N_q0",
+      "write_symbol": "C",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "D",
+      "next_state": "L2N_q0",
+      "write_symbol": "D",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "E",
+      "next_state": "L2N_q0",
+      "write_symbol": "E",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "F",
+      "next_state": "L2N_q0",
+      "write_symbol": "F",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "G",
+      "next_state": "L2N_q0",
+      "write_symbol": "G",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "H",
+      "next_state": "L2N_q0",
+      "write_symbol": "H",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "I",
+      "next_state": "L2N_q0",
+      "write_symbol": "I",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "J",
+      "next_state": "L2N_q0",
+      "write_symbol": "J",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "K",
+      "next_state": "L2N_q0",
+      "write_symbol": "K",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "L",
+      "next_state": "L2N_q0",
+      "write_symbol": "L",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "M",
+      "next_state": "L2N_q0",
+      "write_symbol": "M",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "N",
+      "next_state": "L2N_q0",
+      "write_symbol": "N",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "O",
+      "next_state": "L2N_q0",
+      "write_symbol": "O",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "P",
+      "next_state": "L2N_q0",
+      "write_symbol": "P",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "Q",
+      "next_state": "L2N_q0",
+      "write_symbol": "Q",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "R",
+      "next_state": "L2N_q0",
+      "write_symbol": "R",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "S",
+      "next_state": "L2N_q0",
+      "write_symbol": "S",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "T",
+      "next_state": "L2N_q0",
+      "write_symbol": "T",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "U",
+      "next_state": "L2N_q0",
+      "write_symbol": "U",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "V",
+      "next_state": "L2N_q0",
+      "write_symbol": "V",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "W",
+      "next_state": "L2N_q0",
+      "write_symbol": "W",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "X",
+      "next_state": "L2N_q0",
+      "write_symbol": "X",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "Y",
+      "next_state": "L2N_q0",
+      "write_symbol": "Y",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "Z",
+      "next_state": "L2N_q0",
+      "write_symbol": "Z",
+      "move": "N"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "1",
+      "next_state": "q_read_key",
+      "write_symbol": "1",
+      "move": "R"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "2",
+      "next_state": "q_read_key",
+      "write_symbol": "2",
+      "move": "R"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "3",
+      "next_state": "q_read_key",
+      "write_symbol": "3",
+      "move": "R"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "4",
+      "next_state": "q_read_key",
+      "write_symbol": "4",
+      "move": "R"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "5",
+      "next_state": "q_read_key",
+      "write_symbol": "5",
+      "move": "R"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "6",
+      "next_state": "q_read_key",
+      "write_symbol": "6",
+      "move": "R"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "7",
+      "next_state": "q_read_key",
+      "write_symbol": "7",
+      "move": "R"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "8",
+      "next_state": "q_read_key",
+      "write_symbol": "8",
+      "move": "R"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "9",
+      "next_state": "q_read_key",
+      "write_symbol": "9",
+      "move": "R"
+    },
+    {
+      "current_state": "q_start",
+      "read_symbol": "#",
+      "next_state": "q_read_char",
+      "write_symbol": "#",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "#",
+      "next_state": "q_key_done",
+      "write_symbol": "#",
+      "move": "R"
+    },
+    {
+      "current_state": "q_key_done",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "_",
+      "move": "N"
+    },
+    {
+      "current_state": "q_key_done",
+      "read_symbol": "#",
+      "next_state": "q_read_char",
+      "write_symbol": "#",
+      "move": "R"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "_",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": " ",
+      "next_state": "q_read_char",
+      "write_symbol": " ",
+      "move": "R"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": ".",
+      "next_state": "q_read_char",
+      "write_symbol": ".",
+      "move": "R"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "A",
+      "next_state": "L2N_q0",
+      "write_symbol": "A",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "A",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "A",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "B",
+      "next_state": "L2N_q0",
+      "write_symbol": "B",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "B",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "B",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "C",
+      "next_state": "L2N_q0",
+      "write_symbol": "C",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "C",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "C",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "D",
+      "next_state": "L2N_q0",
+      "write_symbol": "D",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "D",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "D",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "E",
+      "next_state": "L2N_q0",
+      "write_symbol": "E",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "E",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "E",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "F",
+      "next_state": "L2N_q0",
+      "write_symbol": "F",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "F",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "F",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "G",
+      "next_state": "L2N_q0",
+      "write_symbol": "G",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "G",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "G",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "H",
+      "next_state": "L2N_q0",
+      "write_symbol": "H",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "H",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "H",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "I",
+      "next_state": "L2N_q0",
+      "write_symbol": "I",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "I",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "I",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "J",
+      "next_state": "L2N_q0",
+      "write_symbol": "J",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "J",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "J",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "K",
+      "next_state": "L2N_q0",
+      "write_symbol": "K",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "K",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "K",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "L",
+      "next_state": "L2N_q0",
+      "write_symbol": "L",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "L",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "L",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "M",
+      "next_state": "L2N_q0",
+      "write_symbol": "M",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "M",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "M",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "N",
+      "next_state": "L2N_q0",
+      "write_symbol": "N",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "N",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "N",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "O",
+      "next_state": "L2N_q0",
+      "write_symbol": "O",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "O",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "O",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "P",
+      "next_state": "L2N_q0",
+      "write_symbol": "P",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "P",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "P",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "Q",
+      "next_state": "L2N_q0",
+      "write_symbol": "Q",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "Q",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "Q",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "R",
+      "next_state": "L2N_q0",
+      "write_symbol": "R",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "R",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "R",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "S",
+      "next_state": "L2N_q0",
+      "write_symbol": "S",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "S",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "S",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "T",
+      "next_state": "L2N_q0",
+      "write_symbol": "T",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "T",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "T",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "U",
+      "next_state": "L2N_q0",
+      "write_symbol": "U",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "U",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "U",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "V",
+      "next_state": "L2N_q0",
+      "write_symbol": "V",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "V",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "V",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "W",
+      "next_state": "L2N_q0",
+      "write_symbol": "W",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "W",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "W",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "X",
+      "next_state": "L2N_q0",
+      "write_symbol": "X",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "X",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "X",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "Y",
+      "next_state": "L2N_q0",
+      "write_symbol": "Y",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "Y",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "Y",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "q_read_char",
+      "read_symbol": "Z",
+      "next_state": "L2N_q0",
+      "write_symbol": "Z",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "Z",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "Z",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q_accept",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "A",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "_",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "B",
+      "next_state": "L2N_q_write_B_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_B_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "C",
+      "next_state": "L2N_q_write_C_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_C_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_C_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_C_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "D",
+      "next_state": "L2N_q_write_D_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_D_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_D_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_D_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_D_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_D_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "E",
+      "next_state": "L2N_q_write_E_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_E_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_E_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_E_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_E_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_E_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_E_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_E_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "F",
+      "next_state": "L2N_q_write_F_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_F_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_F_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_F_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_F_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_F_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_F_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_F_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_F_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_F_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "G",
+      "next_state": "L2N_q_write_G_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_G_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_G_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_G_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_G_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_G_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_G_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_G_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_G_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_G_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_G_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_G_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "H",
+      "next_state": "L2N_q_write_H_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_H_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_H_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_H_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_H_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_H_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_H_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_H_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_H_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_H_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_H_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_H_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_H_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_H_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "I",
+      "next_state": "L2N_q_write_I_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_I_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_I_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_I_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_I_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_I_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_I_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_I_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_I_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_I_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_I_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_I_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_I_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_I_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_I_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_I_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "J",
+      "next_state": "L2N_q_write_J_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_J_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_J_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_J_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_J_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_J_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_J_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_J_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_J_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_J_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_J_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_J_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_J_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_J_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_J_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_J_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_J_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_J_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "K",
+      "next_state": "L2N_q_write_K_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_K_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_K_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_K_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_K_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_K_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_K_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_K_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_K_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_K_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_K_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_K_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_K_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_K_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_K_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_K_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_K_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_K_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_K_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_K_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "L",
+      "next_state": "L2N_q_write_L_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_L_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_L_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_L_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_L_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_L_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_L_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_L_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_L_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_L_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_L_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_L_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_L_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_L_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_L_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_L_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_L_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_L_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_L_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_L_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_L_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_L_11",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "M",
+      "next_state": "L2N_q_write_M_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_M_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_M_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_M_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_M_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_M_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_M_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_M_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_M_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_M_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_M_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_M_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_M_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_M_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_M_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_M_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_M_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_M_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_M_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_M_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_M_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_M_11",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_M_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_M_12",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "N",
+      "next_state": "L2N_q_write_N_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_N_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_N_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_N_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_N_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_N_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_N_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_N_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_N_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_N_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_N_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_N_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_N_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_N_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_N_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_N_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_N_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_N_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_N_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_N_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_N_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_N_11",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_N_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_N_12",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_N_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_N_13",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "O",
+      "next_state": "L2N_q_write_O_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_O_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_O_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_O_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_O_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_O_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_O_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_O_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_O_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_O_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_O_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_O_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_O_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_O_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_O_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_O_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_O_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_O_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_O_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_O_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_O_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_O_11",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_O_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_O_12",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_O_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_O_13",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_O_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_O_14",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "P",
+      "next_state": "L2N_q_write_P_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_P_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_P_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_P_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_P_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_P_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_P_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_P_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_P_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_P_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_P_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_P_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_P_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_P_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_P_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_P_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_P_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_P_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_P_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_P_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_P_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_P_11",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_P_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_P_12",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_P_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_P_13",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_P_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_P_14",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_P_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_P_15",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "Q",
+      "next_state": "L2N_q_write_Q_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Q_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Q_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Q_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Q_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Q_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Q_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Q_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Q_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Q_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Q_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_11",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Q_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_12",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Q_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_13",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Q_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_14",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Q_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_15",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Q_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Q_16",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "R",
+      "next_state": "L2N_q_write_R_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_11",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_12",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_13",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_14",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_15",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_16",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_R_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_R_17",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "S",
+      "next_state": "L2N_q_write_S_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_11",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_12",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_13",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_14",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_15",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_16",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_17",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_S_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_S_18",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "T",
+      "next_state": "L2N_q_write_T_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_11",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_12",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_13",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_14",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_15",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_16",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_17",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_18",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_T_19",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_T_19",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "U",
+      "next_state": "L2N_q_write_U_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_11",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_12",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_13",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_14",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_15",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_16",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_17",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_18",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_19",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_19",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_U_20",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_U_20",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "V",
+      "next_state": "L2N_q_write_V_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_11",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_12",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_13",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_14",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_15",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_16",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_17",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_18",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_19",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_19",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_20",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_20",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_V_21",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_V_21",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "W",
+      "next_state": "L2N_q_write_W_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_11",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_12",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_13",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_14",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_15",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_16",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_17",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_18",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_19",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_19",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_20",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_20",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_21",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_21",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_W_22",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_W_22",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "X",
+      "next_state": "L2N_q_write_X_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_11",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_12",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_13",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_14",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_15",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_16",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_17",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_18",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_19",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_19",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_20",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_20",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_21",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_21",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_22",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_22",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_X_23",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_X_23",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "Y",
+      "next_state": "L2N_q_write_Y_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_11",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_12",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_13",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_14",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_15",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_16",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_17",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_18",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_19",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_19",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_20",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_20",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_21",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_21",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_22",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_22",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_23",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_23",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Y_24",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Y_24",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "L2N_q0",
+      "read_symbol": "Z",
+      "next_state": "L2N_q_write_Z_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_1",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_2",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_2",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_3",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_3",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_4",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_4",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_5",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_5",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_6",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_6",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_7",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_7",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_8",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_8",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_9",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_9",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_10",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_10",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_11",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_11",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_12",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_12",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_13",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_13",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_14",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_14",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_15",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_15",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_16",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_16",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_17",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_17",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_18",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_18",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_19",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_19",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_20",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_20",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_21",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_21",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_22",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_22",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_23",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_23",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_24",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_24",
+      "read_symbol": "_",
+      "next_state": "L2N_q_write_Z_25",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "L2N_q_write_Z_25",
+      "read_symbol": "_",
+      "next_state": "L2N_q_accept",
+      "write_symbol": "|",
+      "move": "N"
+    },
+    {
+      "current_state": "ADD_q0",
+      "read_symbol": "|",
+      "next_state": "ADD_q0",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "ADD_q0",
+      "read_symbol": "+",
+      "next_state": "ADD_q_erase_plus",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "ADD_q_erase_plus",
+      "read_symbol": "|",
+      "next_state": "ADD_q_erase_plus",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "ADD_q_erase_plus",
+      "read_symbol": "_",
+      "next_state": "ADD_q_accept",
+      "write_symbol": "_",
+      "move": "N"
+    },
+    {
+      "current_state": "MOD_q0",
+      "read_symbol": "_",
+      "next_state": "MOD_q_accept",
+      "write_symbol": "_",
+      "move": "N"
+    },
+    {
+      "current_state": "MOD_q0",
+      "read_symbol": "|",
+      "next_state": "MOD_q1",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q1",
+      "read_symbol": "|",
+      "next_state": "MOD_q2",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q1",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q2",
+      "read_symbol": "|",
+      "next_state": "MOD_q3",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q2",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q3",
+      "read_symbol": "|",
+      "next_state": "MOD_q4",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q3",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q4",
+      "read_symbol": "|",
+      "next_state": "MOD_q5",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q4",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q5",
+      "read_symbol": "|",
+      "next_state": "MOD_q6",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q5",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q6",
+      "read_symbol": "|",
+      "next_state": "MOD_q7",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q6",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q7",
+      "read_symbol": "|",
+      "next_state": "MOD_q8",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q7",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q8",
+      "read_symbol": "|",
+      "next_state": "MOD_q9",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q8",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q9",
+      "read_symbol": "|",
+      "next_state": "MOD_q10",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q9",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q10",
+      "read_symbol": "|",
+      "next_state": "MOD_q11",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q10",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q11",
+      "read_symbol": "|",
+      "next_state": "MOD_q12",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q11",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q12",
+      "read_symbol": "|",
+      "next_state": "MOD_q13",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q12",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q13",
+      "read_symbol": "|",
+      "next_state": "MOD_q14",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q13",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q14",
+      "read_symbol": "|",
+      "next_state": "MOD_q15",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q14",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q15",
+      "read_symbol": "|",
+      "next_state": "MOD_q16",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q15",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q16",
+      "read_symbol": "|",
+      "next_state": "MOD_q17",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q16",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q17",
+      "read_symbol": "|",
+      "next_state": "MOD_q18",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q17",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q18",
+      "read_symbol": "|",
+      "next_state": "MOD_q19",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q18",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q19",
+      "read_symbol": "|",
+      "next_state": "MOD_q20",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q19",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q20",
+      "read_symbol": "|",
+      "next_state": "MOD_q21",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q20",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q21",
+      "read_symbol": "|",
+      "next_state": "MOD_q22",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q21",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q22",
+      "read_symbol": "|",
+      "next_state": "MOD_q23",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q22",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q23",
+      "read_symbol": "|",
+      "next_state": "MOD_q24",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q23",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q24",
+      "read_symbol": "|",
+      "next_state": "MOD_q25",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q24",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q25",
+      "read_symbol": "|",
+      "next_state": "MOD_q26",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q25",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q26",
+      "read_symbol": "|",
+      "next_state": "MOD_q26",
+      "write_symbol": "|",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q26",
+      "read_symbol": "_",
+      "next_state": "MOD_q_erase",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q_erase",
+      "read_symbol": "X",
+      "next_state": "MOD_q_erase",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q_erase",
+      "read_symbol": "_",
+      "next_state": "MOD_q_restart",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q_erase",
+      "read_symbol": "|",
+      "next_state": "MOD_q_erase",
+      "write_symbol": "|",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q_restart",
+      "read_symbol": "_",
+      "next_state": "MOD_q_accept",
+      "write_symbol": "_",
+      "move": "N"
+    },
+    {
+      "current_state": "MOD_q_restart",
+      "read_symbol": "|",
+      "next_state": "MOD_q1",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q_restart",
+      "read_symbol": "X",
+      "next_state": "MOD_q_restart",
+      "write_symbol": "X",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q_restore",
+      "read_symbol": "X",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "|",
+      "move": "L"
+    },
+    {
+      "current_state": "MOD_q_restore",
+      "read_symbol": "_",
+      "next_state": "MOD_q_accept",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "MOD_q_restore",
+      "read_symbol": "|",
+      "next_state": "MOD_q_restore",
+      "write_symbol": "|",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q0",
+      "read_symbol": "_",
+      "next_state": "N2L_q_accept",
+      "write_symbol": "A",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q0",
+      "read_symbol": "|",
+      "next_state": "N2L_q_1",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_1",
+      "read_symbol": "|",
+      "next_state": "N2L_q_2",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_1",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "B",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_2",
+      "read_symbol": "|",
+      "next_state": "N2L_q_3",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_2",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "C",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_3",
+      "read_symbol": "|",
+      "next_state": "N2L_q_4",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_3",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "D",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_4",
+      "read_symbol": "|",
+      "next_state": "N2L_q_5",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_4",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "E",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_5",
+      "read_symbol": "|",
+      "next_state": "N2L_q_6",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_5",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "F",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_6",
+      "read_symbol": "|",
+      "next_state": "N2L_q_7",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_6",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "G",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_7",
+      "read_symbol": "|",
+      "next_state": "N2L_q_8",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_7",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "H",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_8",
+      "read_symbol": "|",
+      "next_state": "N2L_q_9",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_8",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "I",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_9",
+      "read_symbol": "|",
+      "next_state": "N2L_q_10",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_9",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "J",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_10",
+      "read_symbol": "|",
+      "next_state": "N2L_q_11",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_10",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "K",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_11",
+      "read_symbol": "|",
+      "next_state": "N2L_q_12",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_11",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "L",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_12",
+      "read_symbol": "|",
+      "next_state": "N2L_q_13",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_12",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "M",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_13",
+      "read_symbol": "|",
+      "next_state": "N2L_q_14",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_13",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "N",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_14",
+      "read_symbol": "|",
+      "next_state": "N2L_q_15",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_14",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "O",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_15",
+      "read_symbol": "|",
+      "next_state": "N2L_q_16",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_15",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "P",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_16",
+      "read_symbol": "|",
+      "next_state": "N2L_q_17",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_16",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "Q",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_17",
+      "read_symbol": "|",
+      "next_state": "N2L_q_18",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_17",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "R",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_18",
+      "read_symbol": "|",
+      "next_state": "N2L_q_19",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_18",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "S",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_19",
+      "read_symbol": "|",
+      "next_state": "N2L_q_20",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_19",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "T",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_20",
+      "read_symbol": "|",
+      "next_state": "N2L_q_21",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_20",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "U",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_21",
+      "read_symbol": "|",
+      "next_state": "N2L_q_22",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_21",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "V",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_22",
+      "read_symbol": "|",
+      "next_state": "N2L_q_23",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_22",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "W",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_23",
+      "read_symbol": "|",
+      "next_state": "N2L_q_24",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_23",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "X",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_24",
+      "read_symbol": "|",
+      "next_state": "N2L_q_25",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_24",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "Y",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_25",
+      "read_symbol": "|",
+      "next_state": "N2L_q_26",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_25",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "Z",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_26",
+      "read_symbol": "|",
+      "next_state": "N2L_q_26",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_26",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "Z",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_back",
+      "read_symbol": "_",
+      "next_state": "N2L_q_back",
+      "write_symbol": "_",
+      "move": "L"
+    },
+    {
+      "current_state": "N2L_q_back",
+      "read_symbol": "_",
+      "next_state": "N2L_q_accept",
+      "write_symbol": "_",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": " ",
+      "next_state": "q_read_char",
+      "write_symbol": " ",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": ".",
+      "next_state": "q_read_char",
+      "write_symbol": ".",
+      "move": "R"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "_",
+      "next_state": "q_accept",
+      "write_symbol": "_",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "A",
+      "next_state": "L2N_q0",
+      "write_symbol": "A",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "B",
+      "next_state": "L2N_q0",
+      "write_symbol": "B",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "C",
+      "next_state": "L2N_q0",
+      "write_symbol": "C",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "D",
+      "next_state": "L2N_q0",
+      "write_symbol": "D",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "E",
+      "next_state": "L2N_q0",
+      "write_symbol": "E",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "F",
+      "next_state": "L2N_q0",
+      "write_symbol": "F",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "G",
+      "next_state": "L2N_q0",
+      "write_symbol": "G",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "H",
+      "next_state": "L2N_q0",
+      "write_symbol": "H",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "I",
+      "next_state": "L2N_q0",
+      "write_symbol": "I",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "J",
+      "next_state": "L2N_q0",
+      "write_symbol": "J",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "K",
+      "next_state": "L2N_q0",
+      "write_symbol": "K",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "L",
+      "next_state": "L2N_q0",
+      "write_symbol": "L",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "M",
+      "next_state": "L2N_q0",
+      "write_symbol": "M",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "N",
+      "next_state": "L2N_q0",
+      "write_symbol": "N",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "O",
+      "next_state": "L2N_q0",
+      "write_symbol": "O",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "P",
+      "next_state": "L2N_q0",
+      "write_symbol": "P",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "Q",
+      "next_state": "L2N_q0",
+      "write_symbol": "Q",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "R",
+      "next_state": "L2N_q0",
+      "write_symbol": "R",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "S",
+      "next_state": "L2N_q0",
+      "write_symbol": "S",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "T",
+      "next_state": "L2N_q0",
+      "write_symbol": "T",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "U",
+      "next_state": "L2N_q0",
+      "write_symbol": "U",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "V",
+      "next_state": "L2N_q0",
+      "write_symbol": "V",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "W",
+      "next_state": "L2N_q0",
+      "write_symbol": "W",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "X",
+      "next_state": "L2N_q0",
+      "write_symbol": "X",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "Y",
+      "next_state": "L2N_q0",
+      "write_symbol": "Y",
+      "move": "N"
+    },
+    {
+      "current_state": "N2L_q_accept",
+      "read_symbol": "Z",
+      "next_state": "L2N_q0",
+      "write_symbol": "Z",
+      "move": "N"
+    }
+  ]
+}
