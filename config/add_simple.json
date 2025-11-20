@@ -2,56 +2,17 @@
   "description": "Máquina de Turing para SUMA usando marcas - VERSIÓN SIMPLIFICADA",
   "purpose": "Entrada: ||+||| (2+3), Salida: ||||| (5)",
   "example": "Entrada directa con marcas: ||+|||",
-  "note": "Esta versión espera las marcas ya escritas en la entrada",
-  
-  "states": [
-    "q0",
-    "q_erase_plus",
-    "q_accept"
-  ],
-  
+  "note": "Esta versión espera las marcas ya escritas en la entrada. Se usa '|' como unidad unaria estándar",
+  "states": ["q0", "q_erase_plus", "q_accept"],
   "input_alphabet": ["|", "+"],
-  
   "tape_alphabet": ["|", "+", "_"],
-  
   "initial_state": "q0",
-  
   "accept_states": ["q_accept"],
-  
   "blank_symbol": "_",
-  
   "transitions": [
-    {
-      "comment": "Mover derecha sobre las marcas del primer número",
-      "current_state": "q0",
-      "read_symbol": "|",
-      "next_state": "q0",
-      "write_symbol": "|",
-      "move": "R"
-    },
-    {
-      "comment": "Encontrar el + y borrarlo (escribir blanco)",
-      "current_state": "q0",
-      "read_symbol": "+",
-      "next_state": "q_erase_plus",
-      "write_symbol": "_",
-      "move": "R"
-    },
-    {
-      "comment": "Continuar sobre las marcas del segundo número",
-      "current_state": "q_erase_plus",
-      "read_symbol": "|",
-      "next_state": "q_erase_plus",
-      "write_symbol": "|",
-      "move": "R"
-    },
-    {
-      "comment": "Llegar al final y aceptar",
-      "current_state": "q_erase_plus",
-      "read_symbol": "_",
-      "next_state": "q_accept",
-      "write_symbol": "_",
-      "move": "N"
-    }
+    {"comment": "Mover derecha sobre las marcas del primer número", "current_state": "q0", "read_symbol": "|", "next_state": "q0", "write_symbol": "|", "move": "R"},
+    {"comment": "Encontrar el + y borrarlo (escribir blanco)", "current_state": "q0", "read_symbol": "+", "next_state": "q_erase_plus", "write_symbol": "_", "move": "R"},
+    {"comment": "Continuar sobre las marcas del segundo número", "current_state": "q_erase_plus", "read_symbol": "|", "next_state": "q_erase_plus", "write_symbol": "|", "move": "R"},
+    {"comment": "Llegar al final y aceptar", "current_state": "q_erase_plus", "read_symbol": "_", "next_state": "q_accept", "write_symbol": "_", "move": "N"}
   ]
 }

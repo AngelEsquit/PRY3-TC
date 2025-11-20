@@ -1,223 +1,38 @@
 {
   "description": "Máquina de Turing para RESTA usando marcas - VERSIÓN SIMPLIFICADA",
-  "purpose": "Entrada: |||||-|| (5-2), Salida: ||| (3)",
+  "purpose": "Entrada: ||||| - || (5-2), Salida: ||| (3)",
   "example": "Por cada marca después del -, borra una marca antes del -",
-  "note": "Estrategia: marcar y borrar iterativamente, usar # como marcador de inicio",
-  
-  "states": [
-    "q_init",
-    "q0",
-    "q_mark_subtrahend",
-    "q_return_to_start",
-    "q_erase_minuend",
-    "q_go_to_minus",
-    "q_check_next",
-    "q_cleanup",
-    "q_accept"
-  ],
-  
+  "note": "Unario estándar '1'. Marca inicial reemplaza primera unidad por # para volver al inicio.",
+  "states": ["q_init", "q0", "q_mark_subtrahend", "q_return_to_start", "q_erase_minuend", "q_go_to_minus", "q_check_next", "q_cleanup", "q_accept"],
   "input_alphabet": ["|", "-"],
-  
   "tape_alphabet": ["|", "-", "_", "X", "#"],
-  
   "initial_state": "q_init",
-  
   "accept_states": ["q_accept"],
-  
   "blank_symbol": "_",
-  
   "transitions": [
-    {
-      "comment": "Marcar el inicio con #",
-      "current_state": "q_init",
-      "read_symbol": "|",
-      "next_state": "q0",
-      "write_symbol": "#",
-      "move": "R"
-    },
-    {
-      "comment": "Estado inicial: ir al menos",
-      "current_state": "q0",
-      "read_symbol": "|",
-      "next_state": "q0",
-      "write_symbol": "|",
-      "move": "R"
-    },
-    {
-      "comment": "Encontrar el menos y buscar marca a restar",
-      "current_state": "q0",
-      "read_symbol": "-",
-      "next_state": "q_mark_subtrahend",
-      "write_symbol": "-",
-      "move": "R"
-    },
-    {
-      "comment": "Marcar una marca del sustraendo con X",
-      "current_state": "q_mark_subtrahend",
-      "read_symbol": "|",
-      "next_state": "q_return_to_start",
-      "write_symbol": "X",
-      "move": "L"
-    },
-    {
-      "comment": "No hay más marcas a restar - ir a limpieza",
-      "current_state": "q_mark_subtrahend",
-      "read_symbol": "_",
-      "next_state": "q_cleanup",
-      "write_symbol": "_",
-      "move": "L"
-    },
-    {
-      "comment": "Saltar marcas ya procesadas",
-      "current_state": "q_mark_subtrahend",
-      "read_symbol": "X",
-      "next_state": "q_mark_subtrahend",
-      "write_symbol": "X",
-      "move": "R"
-    },
-    {
-      "comment": "Volver sobre el menos",
-      "current_state": "q_return_to_start",
-      "read_symbol": "-",
-      "next_state": "q_return_to_start",
-      "write_symbol": "-",
-      "move": "L"
-    },
-    {
-      "comment": "Volver sobre las marcas del minuendo",
-      "current_state": "q_return_to_start",
-      "read_symbol": "|",
-      "next_state": "q_return_to_start",
-      "write_symbol": "|",
-      "move": "L"
-    },
-    {
-      "comment": "Volver sobre blancos (marcas borradas)",
-      "current_state": "q_return_to_start",
-      "read_symbol": "_",
-      "next_state": "q_return_to_start",
-      "write_symbol": "_",
-      "move": "L"
-    },
-    {
-      "comment": "Volver sobre X marcadas",
-      "current_state": "q_return_to_start",
-      "read_symbol": "X",
-      "next_state": "q_return_to_start",
-      "write_symbol": "X",
-      "move": "L"
-    },
-    {
-      "comment": "Llegamos al inicio (marcador #) - empezar a buscar marca a borrar",
-      "current_state": "q_return_to_start",
-      "read_symbol": "#",
-      "next_state": "q_erase_minuend",
-      "write_symbol": "#",
-      "move": "R"
-    },
-    {
-      "comment": "Saltar blancos iniciales",
-      "current_state": "q_erase_minuend",
-      "read_symbol": "_",
-      "next_state": "q_erase_minuend",
-      "write_symbol": "_",
-      "move": "R"
-    },
-    {
-      "comment": "Encontrar primera marca del minuendo y borrarla",
-      "current_state": "q_erase_minuend",
-      "read_symbol": "|",
-      "next_state": "q_go_to_minus",
-      "write_symbol": "_",
-      "move": "R"
-    },
-    {
-      "comment": "Ir al menos: saltar marcas del minuendo",
-      "current_state": "q_go_to_minus",
-      "read_symbol": "|",
-      "next_state": "q_go_to_minus",
-      "write_symbol": "|",
-      "move": "R"
-    },
-    {
-      "comment": "Ir al menos: saltar blancos",
-      "current_state": "q_go_to_minus",
-      "read_symbol": "_",
-      "next_state": "q_go_to_minus",
-      "write_symbol": "_",
-      "move": "R"
-    },
-    {
-      "comment": "Llegar al menos y buscar siguiente marca a restar",
-      "current_state": "q_go_to_minus",
-      "read_symbol": "-",
-      "next_state": "q_check_next",
-      "write_symbol": "-",
-      "move": "R"
-    },
-    {
-      "comment": "Saltar marcas ya procesadas (X)",
-      "current_state": "q_check_next",
-      "read_symbol": "X",
-      "next_state": "q_check_next",
-      "write_symbol": "X",
-      "move": "R"
-    },
-    {
-      "comment": "Encontrar siguiente marca a procesar",
-      "current_state": "q_check_next",
-      "read_symbol": "|",
-      "next_state": "q_return_to_start",
-      "write_symbol": "X",
-      "move": "L"
-    },
-    {
-      "comment": "No hay más marcas - terminar",
-      "current_state": "q_check_next",
-      "read_symbol": "_",
-      "next_state": "q_cleanup",
-      "write_symbol": "_",
-      "move": "L"
-    },
-    {
-      "comment": "Limpieza: borrar X",
-      "current_state": "q_cleanup",
-      "read_symbol": "X",
-      "next_state": "q_cleanup",
-      "write_symbol": "_",
-      "move": "L"
-    },
-    {
-      "comment": "Limpieza: borrar menos",
-      "current_state": "q_cleanup",
-      "read_symbol": "-",
-      "next_state": "q_cleanup",
-      "write_symbol": "_",
-      "move": "L"
-    },
-    {
-      "comment": "Limpieza: mantener marcas del resultado",
-      "current_state": "q_cleanup",
-      "read_symbol": "|",
-      "next_state": "q_cleanup",
-      "write_symbol": "|",
-      "move": "L"
-    },
-    {
-      "comment": "Limpieza: continuar sobre blancos",
-      "current_state": "q_cleanup",
-      "read_symbol": "_",
-      "next_state": "q_cleanup",
-      "write_symbol": "_",
-      "move": "L"
-    },
-    {
-      "comment": "Llegar al marcador de inicio y restaurarlo a marca",
-      "current_state": "q_cleanup",
-      "read_symbol": "#",
-      "next_state": "q_accept",
-      "write_symbol": "|",
-      "move": "N"
-    }
+    {"comment": "Marcar el inicio con #", "current_state": "q_init", "read_symbol": "|", "next_state": "q0", "write_symbol": "#", "move": "R"},
+    {"comment": "Estado inicial: ir al menos", "current_state": "q0", "read_symbol": "|", "next_state": "q0", "write_symbol": "|", "move": "R"},
+    {"comment": "Encontrar el menos y buscar marca a restar", "current_state": "q0", "read_symbol": "-", "next_state": "q_mark_subtrahend", "write_symbol": "-", "move": "R"},
+    {"comment": "Marcar una marca del sustraendo con X", "current_state": "q_mark_subtrahend", "read_symbol": "|", "next_state": "q_return_to_start", "write_symbol": "X", "move": "L"},
+    {"comment": "No hay más marcas a restar - ir a limpieza", "current_state": "q_mark_subtrahend", "read_symbol": "_", "next_state": "q_cleanup", "write_symbol": "_", "move": "L"},
+    {"comment": "Saltar marcas ya procesadas", "current_state": "q_mark_subtrahend", "read_symbol": "X", "next_state": "q_mark_subtrahend", "write_symbol": "X", "move": "R"},
+    {"comment": "Volver sobre el menos", "current_state": "q_return_to_start", "read_symbol": "-", "next_state": "q_return_to_start", "write_symbol": "-", "move": "L"},
+    {"comment": "Volver sobre las marcas del minuendo", "current_state": "q_return_to_start", "read_symbol": "|", "next_state": "q_return_to_start", "write_symbol": "|", "move": "L"},
+    {"comment": "Volver sobre blancos (marcas borradas)", "current_state": "q_return_to_start", "read_symbol": "_", "next_state": "q_return_to_start", "write_symbol": "_", "move": "L"},
+    {"comment": "Volver sobre X marcadas", "current_state": "q_return_to_start", "read_symbol": "X", "next_state": "q_return_to_start", "write_symbol": "X", "move": "L"},
+    {"comment": "Llegamos al inicio (marcador #) - empezar a buscar marca a borrar", "current_state": "q_return_to_start", "read_symbol": "#", "next_state": "q_erase_minuend", "write_symbol": "#", "move": "R"},
+    {"comment": "Saltar blancos iniciales", "current_state": "q_erase_minuend", "read_symbol": "_", "next_state": "q_erase_minuend", "write_symbol": "_", "move": "R"},
+    {"comment": "Encontrar primera marca del minuendo y borrarla", "current_state": "q_erase_minuend", "read_symbol": "|", "next_state": "q_go_to_minus", "write_symbol": "_", "move": "R"},
+    {"comment": "Ir al menos: saltar marcas del minuendo", "current_state": "q_go_to_minus", "read_symbol": "|", "next_state": "q_go_to_minus", "write_symbol": "|", "move": "R"},
+    {"comment": "Ir al menos: saltar blancos", "current_state": "q_go_to_minus", "read_symbol": "_", "next_state": "q_go_to_minus", "write_symbol": "_", "move": "R"},
+    {"comment": "Llegar al menos y buscar siguiente marca a restar", "current_state": "q_go_to_minus", "read_symbol": "-", "next_state": "q_check_next", "write_symbol": "-", "move": "R"},
+    {"comment": "Saltar marcas ya procesadas (X)", "current_state": "q_check_next", "read_symbol": "X", "next_state": "q_check_next", "write_symbol": "X", "move": "R"},
+    {"comment": "Encontrar siguiente marca a procesar", "current_state": "q_check_next", "read_symbol": "|", "next_state": "q_return_to_start", "write_symbol": "X", "move": "L"},
+    {"comment": "No hay más marcas - terminar", "current_state": "q_check_next", "read_symbol": "_", "next_state": "q_cleanup", "write_symbol": "_", "move": "L"},
+    {"comment": "Limpieza: borrar X", "current_state": "q_cleanup", "read_symbol": "X", "next_state": "q_cleanup", "write_symbol": "_", "move": "L"},
+    {"comment": "Limpieza: borrar menos", "current_state": "q_cleanup", "read_symbol": "-", "next_state": "q_cleanup", "write_symbol": "_", "move": "L"},
+    {"comment": "Limpieza: mantener marcas del resultado", "current_state": "q_cleanup", "read_symbol": "|", "next_state": "q_cleanup", "write_symbol": "|", "move": "L"},
+    {"comment": "Limpieza: continuar sobre blancos", "current_state": "q_cleanup", "read_symbol": "_", "next_state": "q_cleanup", "write_symbol": "_", "move": "L"},
+    {"comment": "Llegar al marcador de inicio y restaurarlo a marca", "current_state": "q_cleanup", "read_symbol": "#", "next_state": "q_accept", "write_symbol": "|", "move": "N"}
   ]
 }

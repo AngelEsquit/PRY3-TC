@@ -24,16 +24,10 @@ if SRC_DIR not in sys.path:
     sys.path.insert(0, SRC_DIR)
 
 from turing_machine import TuringMachine  # type: ignore
-try:
-    from caesar_encrypt_tm import CaesarEncryptTM
-    from caesar_decrypt_tm import CaesarDecryptTM
-    from caesar_pipeline import build_encrypt_pipeline, build_decrypt_pipeline, PipelineStep
-except ImportError:
-    CaesarEncryptTM = None  # type: ignore
-    CaesarDecryptTM = None  # type: ignore
-    build_encrypt_pipeline = None  # type: ignore
-    build_decrypt_pipeline = None  # type: ignore
-    PipelineStep = None  # type: ignore
+
+# Eliminado soporte específico de Cifrado César en Python.
+# La GUI ahora es puramente universal: cualquier JSON cargado se simula.
+PipelineStep = None  # Mantener referencias opcionales inertes
 
 
 class TMVisualizer(tk.Tk):
@@ -54,14 +48,14 @@ class TMVisualizer(tk.Tk):
         self.cfg_blank: str = '_'
         self.cfg_example: str | None = None
         self._example_suggestion: str | None = None
-        # Pipeline animación César
-        self.pipeline_steps: list[PipelineStep] = []
-        self.pipeline_index: int = 0
-        self.pipeline_playing: bool = False
-        self.pipeline_mode: bool = False
-        self.pipeline_filtered_steps: list[PipelineStep] = []
+        # Variables de pipeline removidas (modo César específico). Se deja estructura mínima.
+        self.pipeline_steps: list = []
+        self.pipeline_index = 0
+        self.pipeline_playing = False
+        self.pipeline_mode = False
+        self.pipeline_filtered_steps: list = []
         self.pipeline_stage_counts: dict[str, int] = {}
-        self.pipeline_use_filtered: bool = False
+        self.pipeline_use_filtered = False
         # Condensación
         self.var_condense_boundaries = tk.BooleanVar(value=True)
         self.var_sample_n = tk.IntVar(value=10)
@@ -112,39 +106,24 @@ class TMVisualizer(tk.Tk):
         self.spin_max = ttk.Spinbox(speed_frame, from_=1, to=1000000, textvariable=self.max_steps, width=8)
         self.spin_max.pack(side=tk.LEFT)
 
-        # Caesar Cipher quick panel (modular pipeline) — movido arriba para mayor visibilidad
-        caesar = ttk.LabelFrame(root, text="Cifrado César (Modular)")
-        caesar.pack(fill=tk.X, padx=6, pady=(4, 6))
-        ttk.Label(caesar, text="w = clave#mensaje:").pack(side=tk.LEFT, padx=(6, 4))
-        self.entry_cesar_w = ttk.Entry(caesar, width=50)
-        self.entry_cesar_w.pack(side=tk.LEFT, padx=4)
-        self.btn_cesar_encrypt = ttk.Button(caesar, text="Encriptar w")
-        self.btn_cesar_decrypt = ttk.Button(caesar, text="Decriptar w")
-        self.btn_cesar_encrypt.pack(side=tk.LEFT, padx=4)
-        self.btn_cesar_decrypt.pack(side=tk.LEFT, padx=4)
-        self.lbl_cesar_status = ttk.Label(caesar, text="Listo", foreground="gray")
-        self.lbl_cesar_status.pack(side=tk.LEFT, padx=12)
+        # Panel César eliminado: se quitó completamente; no se crean controles.
 
         # Panel de Animación detallada
-        anim = ttk.LabelFrame(root, text="Animación Paso a Paso César")
+        anim = ttk.LabelFrame(root, text="Animación Paso a Paso (JSON universal)")
         anim.pack(fill=tk.X, padx=6, pady=(0, 6))
-        ttk.Label(anim, text="w = clave#mensaje:").pack(side=tk.LEFT, padx=(6, 4))
+        ttk.Label(anim, text="Entrada inicial:").pack(side=tk.LEFT, padx=(6, 4))
         self.entry_anim_w = ttk.Entry(anim, width=40)
+        self.entry_anim_w.insert(0, "AAA")
         self.entry_anim_w.pack(side=tk.LEFT, padx=4)
-        self.var_anim_mode = tk.StringVar(value="encrypt")
-        ttk.Radiobutton(anim, text="Encrypt", value="encrypt", variable=self.var_anim_mode).pack(side=tk.LEFT, padx=4)
-        ttk.Radiobutton(anim, text="Decrypt", value="decrypt", variable=self.var_anim_mode).pack(side=tk.LEFT, padx=4)
-        self.btn_anim_generate = ttk.Button(anim, text="Generar pasos")
         self.btn_anim_step = ttk.Button(anim, text="Paso ▶")
         self.btn_anim_play = ttk.Button(anim, text="Play ▷")
         self.btn_anim_pause = ttk.Button(anim, text="Pausa ⏸")
         self.btn_anim_reset = ttk.Button(anim, text="Reset ⟲")
-        self.btn_anim_generate.pack(side=tk.LEFT, padx=4)
         self.btn_anim_step.pack(side=tk.LEFT, padx=2)
         self.btn_anim_play.pack(side=tk.LEFT, padx=2)
         self.btn_anim_pause.pack(side=tk.LEFT, padx=2)
         self.btn_anim_reset.pack(side=tk.LEFT, padx=2)
-        self.lbl_anim_info = ttk.Label(anim, text="Sin pasos", foreground="gray")
+        self.lbl_anim_info = ttk.Label(anim, text="Listo", foreground="gray")
         self.lbl_anim_info.pack(side=tk.LEFT, padx=12)
 
         # Filtros y acciones extra para presentación
